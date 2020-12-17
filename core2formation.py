@@ -36,10 +36,11 @@ base_position = 2
 base_sugar = "core1"
 input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
 constraints_file = "constraints_file.cst"
+#constraints_file = "trialConstraint.cst"
 ## Prepare the base peptide 
 base_pose = basePeptidePrep.basePeptideBuild(base_seq, base_position, base_sugar)
 print(base_pose)
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugar_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file)
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file)
