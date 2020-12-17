@@ -63,19 +63,36 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file):
     
     ## setting the movemap 
     mm = pyrosetta.rosetta.core.kinematics.MoveMap()
-    mm.set_bb(True)
+    mm.set_bb(False)
     mm.set_chi(False)
     mm.set_jump(True)
+
+    ## Use Rigid Body Mover to bring the base peptide close to the enzyme
+    rigid_body = pyrosetta.rosetta.protocols.rigid.RigidBodyPerturbNoCenterMover()
+    rigid_body.add_jump(1)
+    rigid_body.rot_magnitude(10)
+    rigid_body.trans_magnitude(5.0)
+    
+    first_pose = enzyme_pose.clone()
+    while (sfxn(enzyme_pose) > 100):
+        rigid_body.apply(first_pose)
+        if (sfxn(first_pose) < sfxn(enzyme_pose)):
+            enzyme_pose = first_pose.clone()
+        else:
+            first_pose = enzyme_pose.clone()
+        print(sfxn(enzyme_pose))
+    sfxn.show(enzyme_pose)
 
     ## Apply the minimizer (use Cartesian coordinates)
     minimizer =  pyrosetta.rosetta.protocols.minimization_packing.MinMover()
     minimizer.cartesian(True)
-    minimizer.tolerance(0.001) # not sure what to do with the this 
+    minimizer.tolerance(0.001) 
     minimizer.movemap(mm) 
     minimizer.min_type("lbfgs_armijo_nonmonotone")
     minimizer.score_function(sfxn)
     minimizer.apply(enzyme_pose)
 
     print(sfxn.show(enzyme_pose))
-    enzyme_pose.dump_pdb("merging_result.pdb")
+    enzyme_pose.dump_pdb("merging_result2.pdb")
     return None # So far, will change this shortly
+    # return enzyme_pose
