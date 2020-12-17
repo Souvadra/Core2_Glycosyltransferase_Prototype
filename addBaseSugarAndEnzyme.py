@@ -74,14 +74,33 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file):
     rigid_body.trans_magnitude(5.0)
     
     first_pose = enzyme_pose.clone()
-    while (sfxn(enzyme_pose) > 100):
+    while (sfxn(enzyme_pose) > 50 ):
         rigid_body.apply(first_pose)
         if (sfxn(first_pose) < sfxn(enzyme_pose)):
             enzyme_pose = first_pose.clone()
+            print(sfxn(enzyme_pose))
         else:
             first_pose = enzyme_pose.clone()
-        print(sfxn(enzyme_pose))
+        #print(sfxn(enzyme_pose))
     sfxn.show(enzyme_pose)
+    print(enzyme_pose.fold_tree())
+
+    rigid_body2 = pyrosetta.rosetta.protocols.rigid.RigidBodyPerturbNoCenterMover()
+    rigid_body2.add_jump(1)
+    rigid_body2.rot_magnitude(1)
+    rigid_body2.trans_magnitude(0.1)
+    
+    first_pose = enzyme_pose.clone()
+    while (sfxn(enzyme_pose) > -500 ):
+        rigid_body2.apply(first_pose)
+        if (sfxn(first_pose) < sfxn(enzyme_pose)):
+            enzyme_pose = first_pose.clone()
+            print(sfxn(enzyme_pose))
+        else:
+            first_pose = enzyme_pose.clone()
+        #print(sfxn(enzyme_pose))
+    sfxn.show(enzyme_pose)
+    print(enzyme_pose.fold_tree())
 
     ## Apply the minimizer (use Cartesian coordinates)
     minimizer =  pyrosetta.rosetta.protocols.minimization_packing.MinMover()
