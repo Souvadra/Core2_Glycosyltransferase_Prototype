@@ -113,5 +113,5 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file):
 
     print(sfxn.show(enzyme_pose))
     enzyme_pose.dump_pdb("merging_result2.pdb")
-    return None # So far, will change this shortly
-    # return enzyme_pose
+    #return None # So far, will change this shortly
+    return enzyme_pose
