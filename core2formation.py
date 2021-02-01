@@ -43,4 +43,5 @@ print(base_pose)
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file)
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,2)
+sugars_and_enzyme_pose.dump_pdb("final_answer_of_all.pdb")

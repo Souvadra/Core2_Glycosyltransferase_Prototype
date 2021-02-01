@@ -33,17 +33,66 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
     print(sfxn.show(enzyme_pose))
 
     ## Change the FoldTree to more Docking friendly option as suggested by Pooja 
-    first_residue_enzyme = 1
-    last_residue_enzyme = 369
-    anchor_residue_enzyme = 130
-    anchor_residue_substrate = 373
-    first_residue_substrate = 372
-    last_residue_substrate = 374
-    first_donor = 370
-    last_donor = 371
+    chain_begin_list = []
+    chain_end_list = []
+    chain_begin_list.append(int(enzyme_pose.chain_begin(1)))
+    chain_end_list.append(int(enzyme_pose.chain_end(1)))
+    while (chain_end_list[-1] < int(enzyme_pose.total_residue())):
+        chain_num = int(enzyme_pose.chain(chain_end_list[-1]+1))
+        chain_begin_list.append(int(enzyme_pose.chain_begin(chain_num)))
+        chain_end_list.append(int(enzyme_pose.chain_end(chain_num)))
+    total_chains = len(chain_begin_list)
+
+    AA_set = {'ALA','ARG','ASN','ASP','CYS','GLN','GLU','GLY','HIS','ILE','LEU','LYS','MET','PHE','PRO','SER','THR','TRP','TYR','VAL'}
+    
+    # Criteria 1: Enzyme generally the largest chain of this reaction
+    chain_length_list = []
+    for i in range(0,len(chain_begin_list)):
+        chain_length_list.append(chain_end_list[i]-chain_begin_list[i])
+    largest_chain_length = max(chain_length_list)
+
+    for i in range(0,len(chain_length_list)):
+        if chain_length_list[i] == largest_chain_length:
+            enzyme_chain = i+1
+    
+    # Criteria 2 and 3: the acceptor peptide will not have any sugar in it and the donor molecule will have UDP it it 
+    for i in range(0,len(chain_length_list)):
+        if (i+1 != enzyme_chain):
+            assumption = True 
+            for j in range(chain_begin_list[i],chain_end_list[i]+1):
+                name = str(enzyme_pose.residue(j).name())
+                name = name[0:3]
+                if name == 'UDP': donor_chain = i+1
+                if name not in AA_set:
+                    assumption = False
+            if assumption == True: 
+                acceptor_chain = i+1
+    
+    # Finding the pivot residue 
+    reference = enzyme_pose.residue(chain_begin_list[donor_chain-1]).xyz("3OPB")
+    distance_lowest = float('inf')
+    pivot_residue = float('inf')
+    for i in range(chain_begin_list[enzyme_chain-1], chain_end_list[enzyme_chain-1]+1):
+        residue1 = enzyme_pose.residue(i).xyz("CA")
+        distance_curr = (residue1-reference).norm()
+        if distance_curr < distance_lowest:
+            distance_lowest = distance_curr
+            pivot_residue = i
+
+    # Now actually changing the fold tree in an automated fashion 
+    first_residue_enzyme = int(enzyme_pose.chain_begin(enzyme_chain))
+    last_residue_enzyme = int(enzyme_pose.chain_end(enzyme_chain))
+    
+    anchor_residue_enzyme = pivot_residue
+    
+    first_residue_substrate = int(enzyme_pose.chain_begin(acceptor_chain))
+    last_residue_substrate = int(enzyme_pose.chain_end(acceptor_chain))
+    anchor_residue_substrate = int((first_residue_substrate+last_residue_substrate)/2)
+    first_donor = int(enzyme_pose.chain_begin(donor_chain))
+    last_donor = int(enzyme_pose.chain_end(donor_chain))
 
     ft_docking = pyrosetta.FoldTree()
-    ft_docking.add_edge(anchor_residue_enzyme,1,-1)
+    ft_docking.add_edge(anchor_residue_enzyme,first_residue_enzyme,-1)
     ft_docking.add_edge(anchor_residue_enzyme,last_residue_enzyme,-1)
 
     ft_docking.add_edge(anchor_residue_enzyme, anchor_residue_substrate, 1) 
@@ -56,8 +105,13 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
     chemical_edges = enzyme_pose.fold_tree().get_chemical_edges() # connections to the glycan residues from anchor out 
     for chemical in range(1, len(chemical_edges) + 1):
         ft_docking.add_edge(chemical_edges[chemical].start(), chemical_edges[chemical].stop(), -2)
+        sugar_start_res = chemical_edges[chemical].stop()
+        sugar_chain = int(enzyme_pose.chain(sugar_start_res))
+        sugar_chain_start = int(enzyme_pose.chain_begin(sugar_chain))
+        sugar_chain_end = int(enzyme_pose.chain_end(sugar_chain))
+        ft_docking.add_edge(sugar_chain_start,sugar_chain_end,-1)
 
-    ft_docking.add_edge(375,376,-1) # Adding the covalent bond between the two sugars of core 1 
+    # ft_docking.add_edge(375,376,-1) # Adding the covalent bond between the two sugars of core 1 
     print(enzyme_pose.fold_tree())
     enzyme_pose.fold_tree(ft_docking)
     print(enzyme_pose.fold_tree())
@@ -70,6 +124,8 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
 
     RMSD_list = []
     score_list = []  
+    minimum_score = float('inf')
+    answer_pose = enzyme_pose.clone()
     referencePose = pose_from_pdb("/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb")
     for trial_number in range(0,decoy_numbers):
         print("Decoy number: " + str(trial_number))
@@ -125,28 +181,18 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
                 print("Iternation count exceeded !!")
                 break
             #print(sfxn(enzyme_pose))
+        
+        if sfxn(curr_enzyme_pose) < minimum_score:
+            answer_pose = curr_enzyme_pose.clone()
+            minimum_score = sfxn(curr_enzyme_pose)
+
         score_list.append(sfxn(curr_enzyme_pose))
         RMSD_list.append(CA_rmsd(curr_enzyme_pose,referencePose))
         dumping_name = "merging_result" + str(trial_number) + ".pdb"
         curr_enzyme_pose.dump_pdb(dumping_name)
 
-    '''
-    ## Apply the minimizer (use Cartesian coordinates)
-    minimizer =  pyrosetta.rosetta.protocols.minimization_packing.MinMover()
-    minimizer.cartesian(True)
-    minimizer.tolerance(0.001) 
-    minimizer.movemap(mm) 
-    minimizer.min_type("lbfgs_armijo_nonmonotone")
-    minimizer.score_function(sfxn)
-    minimizer.apply(enzyme_pose)
-    '''
-    min_energy = min(score_list)
-    for i in range(0,len(score_list)):
-        if score_list[i] == min_energy:
-            print("merging_result" + str(i) + ".pdb has the lowest energy.")
-            output_pose = pose_from_pdb("merging_result" + str(i) + ".pdb")
-
-    print(sfxn.show(output_pose))
-    output_pose.dump_pdb("merging_result2.pdb")
+    print(sfxn.show(answer_pose))
+    print("score_list: ", score_list)
+    print("rmsd_list: ", RMSD_list)
     #return None # So far, will change this shortly
-    return output_pose
+    return answer_pose
