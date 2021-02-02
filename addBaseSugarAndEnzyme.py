@@ -17,7 +17,7 @@ def mergePoses(base_pose, enzyme_pose):
     anchor_point = int(enzyme_pose.total_residue()) - 2 # just to make sure that the UDP-sugar remains the last residues in the whole pose
     enzyme_pose.append_pose_by_jump(base_pose, anchor_point)
 
-def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers=5):
+def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers=5, REFERENCE=False, reference_pose_file=None):
     """ This program takes the base sugar pose and the pose of the enzyme with donor moiety
         and the constraints and make sure the they obey the constraint in subsequent relax
         procedure as a procedure to bypass manual overlaying using PyMOL. """
@@ -122,11 +122,12 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
     mm.set_chi(False)
     mm.set_jump(True)
 
-    RMSD_list = []
     score_list = []  
     minimum_score = float('inf')
     answer_pose = enzyme_pose.clone()
-    referencePose = pose_from_pdb("/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb")
+    if REFERENCE == True:
+        referencePose = pose_from_pdb(reference_pose_file)
+        RMSD_list = []
     for trial_number in range(0,decoy_numbers):
         print("Decoy number: " + str(trial_number))
         ## Use Rigid Body Mover to bring the base peptide close to the enzyme
@@ -187,12 +188,14 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
             minimum_score = sfxn(curr_enzyme_pose)
 
         score_list.append(sfxn(curr_enzyme_pose))
-        RMSD_list.append(CA_rmsd(curr_enzyme_pose,referencePose))
+        if REFERENCE == True:
+            RMSD_list.append(CA_rmsd(curr_enzyme_pose,referencePose))
         dumping_name = "merging_result" + str(trial_number) + ".pdb"
         curr_enzyme_pose.dump_pdb(dumping_name)
 
     print(sfxn.show(answer_pose))
     print("score_list: ", score_list)
-    print("rmsd_list: ", RMSD_list)
-    #return None # So far, will change this shortly
+    if REFERENCE == True:
+        print("rmsd_list: ", RMSD_list)
+    
     return answer_pose
