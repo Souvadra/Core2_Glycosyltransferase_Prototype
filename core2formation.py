@@ -49,4 +49,4 @@ print(base_pose)
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
 sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,5)
-sugars_and_enzyme_pose.dump_pdb("deployment_T2_2.pdb")
+sugars_and_enzyme_pose.dump_pdb("deployment_T2_1.pdb")
