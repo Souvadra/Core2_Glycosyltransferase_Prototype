@@ -147,7 +147,7 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
                 #print(sfxn(curr_enzyme_pose))
             else:
                 first_pose = curr_enzyme_pose.clone()
-            if (num_iter > 1000):
+            if (num_iter > 500):
                 print("Iternation count exceeded !!")
                 break
             #print(sfxn(enzyme_pose))
@@ -190,8 +190,8 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
         score_list.append(sfxn(curr_enzyme_pose))
         if REFERENCE == True:
             RMSD_list.append(CA_rmsd(curr_enzyme_pose,referencePose))
-        dumping_name = "merging_result" + str(trial_number) + ".pdb"
-        curr_enzyme_pose.dump_pdb(dumping_name)
+        #dumping_name = "merging_result" + str(trial_number) + ".pdb"
+        #curr_enzyme_pose.dump_pdb(dumping_name)
 
     print(sfxn.show(answer_pose))
     print("score_list: ", score_list)

@@ -25,10 +25,11 @@ def basePeptideBuild(sequence, res_number, sugar):
         and outputs a pose object of the sequence with the core1 sugar glycosylated 
         on the specified THR residue. '''
     pose1 = pose_from_sequence(sequence)
-    glycosylator = SimpleGlycosylateMover()
-    if sugar not in sugar_dicionary: print("The sugar not known!!")
-    glycosylator.set_glycosylation(sugar_dicionary[sugar])
-    glycosylator.set_position(res_number)
-    glycosylator.apply(pose1)
-    relax_sugars(pose1) 
+    if sugar != None:
+        glycosylator = SimpleGlycosylateMover()
+        if sugar not in sugar_dicionary: print("The sugar not known!!")
+        glycosylator.set_glycosylation(sugar_dicionary[sugar])
+        glycosylator.set_position(res_number)
+        glycosylator.apply(pose1)
+        relax_sugars(pose1) 
     return pose1

@@ -33,10 +33,13 @@ Command Line Arguments:
 '''
 base_seq = "STP"
 base_position = 2
-base_sugar = "core1"
-input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
-reference_pose_file  = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
-constraints_file = "constraints_file.cst"
+base_sugar = None #"core1"
+input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/side_project/input_substrates/2ffu-monomer-alpha-GalNAc-metal_removed.pdb"
+'''
+"/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
+'''
+reference_pose_file  = None # "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
+constraints_file = "ppGalNAC_T2_constraints_file.cst" # "constraints_file.cst"
 #constraints_file = "trialConstraint.cst"
 
 ## Prepare the base peptide 
@@ -45,5 +48,5 @@ print(base_pose)
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,20,True,reference_pose_file)
-sugars_and_enzyme_pose.dump_pdb("deployment5.pdb")
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,5)
+sugars_and_enzyme_pose.dump_pdb("deployment_T2_2.pdb")
