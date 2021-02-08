@@ -31,10 +31,10 @@ Command Line Arguments:
 - The constraint file
 
 '''
-base_seq = "STP"
-base_position = 2
+base_seq = str(sys.argv[1]) #"STP"
+base_position = int(sys.argv[2]) #2
 base_sugar = "core1"
-input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
+input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
 
 reference_pose_file  = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
 constraints_file = "3OTK_constraints_file.cst" # "constraints_file.cst"
@@ -46,5 +46,6 @@ print(base_pose)
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,3)
-sugars_and_enzyme_pose.dump_pdb("deployment_3OTK_1.pdb")
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,25)
+output_name = "deployment_" + "3OTK_" + base_seq + ".pdb"
+sugars_and_enzyme_pose.dump_pdb(output_name)

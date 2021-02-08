@@ -187,7 +187,7 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
 
         score_list.append(sfxn(curr_enzyme_pose))
         atom1 = curr_enzyme_pose.residue(371).xyz("C1")
-        atom2 = curr_enzyme_pose.residue(375).xyz("O6")
+        atom2 = curr_enzyme_pose.residue(377).xyz("O6")
         distance_list.append((atom1-atom2).norm())
         #dumping_name = "merging_result" + str(trial_number) + ".pdb"
         #curr_enzyme_pose.dump_pdb(dumping_name)
