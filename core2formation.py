@@ -34,7 +34,7 @@ Command Line Arguments:
 base_seq = str(sys.argv[1]) #"STP"
 base_position = int(sys.argv[2]) #2
 base_sugar = "core1"
-input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
+input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
 
 reference_pose_file  = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
 constraints_file = "3OTK_constraints_file.cst" # "constraints_file.cst"

@@ -116,12 +116,6 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
     enzyme_pose.fold_tree(ft_docking)
     print(enzyme_pose.fold_tree())
     
-    ## setting the movemap 
-    mm = pyrosetta.rosetta.core.kinematics.MoveMap()
-    mm.set_bb(False)
-    mm.set_chi(False)
-    mm.set_jump(True)
-
     score_list = []  
     distance_list = []
     minimum_score = float('inf')
@@ -181,13 +175,43 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
                 break
             #print(sfxn(enzyme_pose))
         
+        ## Final Relax protocol, to make sure things get proper
+        tf = pyrosetta.rosetta.core.pack.task.TaskFactory()
+        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
+        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
+
+        #packer = pyrosetta.rosetta.protocols.minimization_packing.PackRotamersMover()
+        #packer.task_factory(tf)
+
+        acceptor_peptide_selector = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        for j in range(int(curr_enzyme_pose.chain_begin(acceptor_chain)),int(enzyme_pose.total_residue()) + 1): # Can be generalised 
+            acceptor_peptide_selector.append_index(j)
+        acceptor_peptide_selector.apply(curr_enzyme_pose)
+
+        prevent_repackign_rlt = pyrosetta.rosetta.core.pack.task.operation.PreventRepackingRLT()
+        prevent_subset_repacking = pyrosetta.rosetta.core.pack.task.operation.OperateOnResidueSubset(prevent_repackign_rlt, acceptor_peptide_selector, flip_subset=True)
+
+        tf.push_back(prevent_subset_repacking)
+        mmf = MoveMapFactory()
+        mmf.all_bb(False)
+        mmf.all_chi(True)
+        mmf.add_bb_action(pyrosetta.rosetta.core.select.movemap.move_map_action.mm_enable, acceptor_peptide_selector)
+
+        fr = pyrosetta.rosetta.protocols.relax.FastRelax()
+        fr.set_task_factory(tf)
+        fr.set_scorefxn(sfxn)
+        fr.set_movemap_factory(mmf)
+        fr.max_iter(0)
+        fr.apply(curr_enzyme_pose)
+        ## Relax protocol ends 
+        
         if sfxn(curr_enzyme_pose) < minimum_score:
             answer_pose = curr_enzyme_pose.clone()
             minimum_score = sfxn(curr_enzyme_pose)
 
         score_list.append(sfxn(curr_enzyme_pose))
-        atom1 = curr_enzyme_pose.residue(371).xyz("C1")
-        atom2 = curr_enzyme_pose.residue(377).xyz("O6")
+        atom1 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(donor_chain))).xyz("C1") # Can be generalised 
+        atom2 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(acceptor_chain))+1).xyz("O6") # Can be generalised 
         distance_list.append((atom1-atom2).norm())
         #dumping_name = "merging_result" + str(trial_number) + ".pdb"
         #curr_enzyme_pose.dump_pdb(dumping_name)
