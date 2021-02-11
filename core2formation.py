@@ -49,3 +49,31 @@ enzyme_pose = pose_from_pdb(input_enzyme_file)
 sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,25)
 output_name = "deployment_" + "3OTK_" + base_seq + ".pdb"
 sugars_and_enzyme_pose.dump_pdb(output_name)
+
+##########################################################################################
+#############                    Calculating RMSD                           ##############
+##########################################################################################
+allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+allEnzyme_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+for j in range(1,372):
+    allEnzyme_experimental.append_index(j)
+    allEnzyme_reference.append_index(j)
+
+core1_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+for j in range(375,377):
+    core1_experimental.append_index(j)
+core1_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+for j in range(372,374):
+    core1_reference.append_index(j)
+
+## Defining the reference pose 
+reference_pose = pose_from_pdb(reference_pose_file)
+
+core1_rmsd = pyrosetta.rosetta.core.simple_metrics.metrics.RMSDMetric(reference_pose)
+core1_rmsd.set_residue_selector(core1_experimental)
+core1_rmsd.set_residue_selector_reference(core1_reference)
+core1_rmsd.set_residue_selector_super(allEnzyme_experimental)
+core1_rmsd.set_residue_selector_super_reference(allEnzyme_reference)
+core1_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all)
+my_RMSD = core1_rmsd.calculate(sugars_and_enzyme_pose)
+print("The RMSD of the core1 sugar: ", my_RMSD)
