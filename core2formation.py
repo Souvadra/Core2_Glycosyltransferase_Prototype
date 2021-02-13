@@ -34,9 +34,9 @@ Command Line Arguments:
 base_seq = str(sys.argv[1]) #"STP"
 base_position = int(sys.argv[2]) #2
 base_sugar = "core1"
-input_enzyme_file = "/home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
+input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
 
-reference_pose_file  = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
+reference_pose_file  = "/home/shati/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
 constraints_file = "3OTK_constraints_file.cst" # "constraints_file.cst"
 #constraints_file = "trialConstraint.cst"
 
@@ -74,6 +74,6 @@ core1_rmsd.set_residue_selector(core1_experimental)
 core1_rmsd.set_residue_selector_reference(core1_reference)
 core1_rmsd.set_residue_selector_super(allEnzyme_experimental)
 core1_rmsd.set_residue_selector_super_reference(allEnzyme_reference)
-core1_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all)
+core1_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all_heavy)
 my_RMSD = core1_rmsd.calculate(sugars_and_enzyme_pose)
 print("The RMSD of the core1 sugar: ", my_RMSD)
