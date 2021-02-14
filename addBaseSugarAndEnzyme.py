@@ -17,7 +17,7 @@ def mergePoses(base_pose, enzyme_pose):
     anchor_point = int(enzyme_pose.total_residue()) - 2 # just to make sure that the UDP-sugar remains the last residues in the whole pose
     enzyme_pose.append_pose_by_jump(base_pose, anchor_point)
 
-def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers, reference_pose_file, peptide_sequence_name):
+def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers, reference_pose_file, peptide_sequence_name, toRelax):
     """ This program takes the base sugar pose and the pose of the enzyme with donor moiety
         and the constraints and make sure the they obey the constraint in subsequent relax
         procedure as a procedure to bypass manual overlaying using PyMOL. """
@@ -184,34 +184,37 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
             #print(sfxn(enzyme_pose))
         
         ## Final Relax protocol, to make sure things get proper
-        tf = pyrosetta.rosetta.core.pack.task.TaskFactory()
-        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
-        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
+        if toRelax not in [True, False]:
+            print("toRelax must be a boolean True or False !!!")
+        if toRelax == True:
+            tf = pyrosetta.rosetta.core.pack.task.TaskFactory()
+            tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
+            tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
 
-        #packer = pyrosetta.rosetta.protocols.minimization_packing.PackRotamersMover() ## Should I turn it on ??????????????
-        #packer.task_factory(tf)
+            acceptor_peptide_selector = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+            for j in range(int(curr_enzyme_pose.chain_begin(acceptor_chain)),int(enzyme_pose.total_residue()) + 1): # Can be generalised 
+                acceptor_peptide_selector.append_index(j)
+            acceptor_peptide_selector.apply(curr_enzyme_pose)
 
-        acceptor_peptide_selector = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
-        for j in range(int(curr_enzyme_pose.chain_begin(acceptor_chain)),int(enzyme_pose.total_residue()) + 1): # Can be generalised 
-            acceptor_peptide_selector.append_index(j)
-        acceptor_peptide_selector.apply(curr_enzyme_pose)
+            #packer = pyrosetta.rosetta.protocols.minimization_packing.PackRotamersMover() ## Should I turn it on ??????????????
+            #packer.task_factory(tf)
+            
+            prevent_repackign_rlt = pyrosetta.rosetta.core.pack.task.operation.PreventRepackingRLT()
+            prevent_subset_repacking = pyrosetta.rosetta.core.pack.task.operation.OperateOnResidueSubset(prevent_repackign_rlt, acceptor_peptide_selector, flip_subset=True)
 
-        prevent_repackign_rlt = pyrosetta.rosetta.core.pack.task.operation.PreventRepackingRLT()
-        prevent_subset_repacking = pyrosetta.rosetta.core.pack.task.operation.OperateOnResidueSubset(prevent_repackign_rlt, acceptor_peptide_selector, flip_subset=True)
+            tf.push_back(prevent_subset_repacking)
+            mmf = MoveMapFactory()
+            mmf.all_bb(False)
+            mmf.all_chi(True)
+            mmf.add_bb_action(pyrosetta.rosetta.core.select.movemap.move_map_action.mm_enable, acceptor_peptide_selector)
 
-        tf.push_back(prevent_subset_repacking)
-        mmf = MoveMapFactory()
-        mmf.all_bb(False)
-        mmf.all_chi(True)
-        mmf.add_bb_action(pyrosetta.rosetta.core.select.movemap.move_map_action.mm_enable, acceptor_peptide_selector)
-
-        fr = pyrosetta.rosetta.protocols.relax.FastRelax()
-        fr.set_task_factory(tf)
-        fr.set_scorefxn(sfxn)
-        fr.set_movemap_factory(mmf)
-        fr.max_iter(0)
-        fr.apply(curr_enzyme_pose)
-        ## Relax protocol ends 
+            fr = pyrosetta.rosetta.protocols.relax.FastRelax()
+            fr.set_task_factory(tf)
+            fr.set_scorefxn(sfxn)
+            fr.set_movemap_factory(mmf)
+            fr.max_iter(0)
+            fr.apply(curr_enzyme_pose)
+        ## Relax protocol ends ---------------------------------------------------------
         
         if sfxn(curr_enzyme_pose) < minimum_score:
             answer_pose = curr_enzyme_pose.clone()

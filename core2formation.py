@@ -38,6 +38,7 @@ input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/out
 
 reference_pose_file  = "/home/shati/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
 constraints_file = "3OTK_constraints_file.cst" # "constraints_file.cst"
+toRelax = True 
 #constraints_file = "trialConstraint.cst"
 
 ## Prepare the base peptide 
@@ -46,7 +47,7 @@ print(base_pose)
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,25, reference_pose_file, base_seq)
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,25, reference_pose_file, base_seq, toRelax)
 output_name = "deployment_" + "3OTK_" + base_seq + ".pdb"
 sugars_and_enzyme_pose.dump_pdb(output_name)
 
