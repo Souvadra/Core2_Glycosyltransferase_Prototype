@@ -17,7 +17,7 @@ def mergePoses(base_pose, enzyme_pose):
     anchor_point = int(enzyme_pose.total_residue()) - 2 # just to make sure that the UDP-sugar remains the last residues in the whole pose
     enzyme_pose.append_pose_by_jump(base_pose, anchor_point)
 
-def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers=5):
+def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_numbers, reference_pose_file, peptide_sequence_name):
     """ This program takes the base sugar pose and the pose of the enzyme with donor moiety
         and the constraints and make sure the they obey the constraint in subsequent relax
         procedure as a procedure to bypass manual overlaying using PyMOL. """
@@ -115,9 +115,17 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
     print(enzyme_pose.fold_tree())
     enzyme_pose.fold_tree(ft_docking)
     print(enzyme_pose.fold_tree())
+
+    # Defining the reference_pose for peptide-RMSD calculation, as suggested by Pooja 
+    peptide_reference_pose = enzyme_pose.clone()
     
+    ## Initializing the output lists
     score_list = []  
     distance_list = []
+    core1_rmsd_list = []
+    peptide_rmsd_list = []
+    ## ------------------------------
+
     minimum_score = float('inf')
     answer_pose = enzyme_pose.clone()
     for trial_number in range(0,decoy_numbers):
@@ -180,7 +188,7 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
         tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
         tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
 
-        #packer = pyrosetta.rosetta.protocols.minimization_packing.PackRotamersMover()
+        #packer = pyrosetta.rosetta.protocols.minimization_packing.PackRotamersMover() ## Should I turn it on ??????????????
         #packer.task_factory(tf)
 
         acceptor_peptide_selector = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
@@ -210,14 +218,70 @@ def addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file, decoy_number
             minimum_score = sfxn(curr_enzyme_pose)
 
         score_list.append(sfxn(curr_enzyme_pose))
-        atom1 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(donor_chain))).xyz("C1") # Can be generalised 
-        atom2 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(acceptor_chain))+1).xyz("O6") # Can be generalised 
+        atom1 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(donor_chain))).xyz("C1") 
+        atom2 = curr_enzyme_pose.residue(int(enzyme_pose.chain_end(acceptor_chain))+1).xyz("O6") 
         distance_list.append((atom1-atom2).norm())
         #dumping_name = "merging_result" + str(trial_number) + ".pdb"
         #curr_enzyme_pose.dump_pdb(dumping_name)
 
+        ## Calling the reference_pose 
+        reference_pose = pose_from_pdb(reference_pose_file)
+        ## RMSD of the core 1 sugar -------------------------------------------------------------------- 
+        allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        allEnzyme_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        for j in range(int(enzyme_pose.chain_begin(enzyme_chain)), int(enzyme_pose.chain_end(enzyme_chain))+1):
+            allEnzyme_experimental.append_index(j)
+            allEnzyme_reference.append_index(j)
+
+        core1_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        for j in range(sugar_chain_start,sugar_chain_end+1):
+            core1_experimental.append_index(j)
+        core1_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        for j in range(372,374): # Do i need to generalize it??? 
+            core1_reference.append_index(j)
+
+        core1_rmsd = pyrosetta.rosetta.core.simple_metrics.metrics.RMSDMetric(reference_pose)
+        core1_rmsd.set_residue_selector(core1_experimental)
+        core1_rmsd.set_residue_selector_reference(core1_reference)
+        core1_rmsd.set_residue_selector_super(allEnzyme_experimental)
+        core1_rmsd.set_residue_selector_super_reference(allEnzyme_reference)
+        core1_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all_heavy)
+        core1_rmsd_list.append(float(core1_rmsd.calculate(curr_enzyme_pose)))
+        ## ------------------------------------------------------------------------------------------------
+        ## RMSD of the peptide final pose with its initial form 
+        peptide_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        peptide_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        for j in range(int(enzyme_pose.chain_begin(acceptor_chain)), int(enzyme_pose.chain_end(acceptor_chain))+1):
+            peptide_experimental.append_index(j)
+            peptide_reference.append_index(j)
+        
+        peptide_rmsd = pyrosetta.rosetta.core.simple_metrics.metrics.RMSDMetric(peptide_reference_pose)
+        peptide_rmsd.set_residue_selector(peptide_experimental)
+        peptide_rmsd.set_residue_selector_reference(peptide_reference)
+        peptide_rmsd.set_residue_selector_super(allEnzyme_experimental)
+        peptide_rmsd.set_residue_selector_super_reference(allEnzyme_reference)
+        peptide_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all)
+        peptide_rmsd_list.append(float(peptide_rmsd.calculate(curr_enzyme_pose)))
+        ## ---------------------------------------------------------------------------------------------------
+
     print(sfxn.show(answer_pose))
-    print("score_list: ", score_list)
-    print("distance_list: ", distance_list)
+    print("score_list = ", score_list)
+    print("distance_list = ", distance_list)
+    print("core1_rmsd_list = ", core1_rmsd_list)
+    print("peptide_rmsd_list = ", peptide_rmsd_list)
+    
+    ## Writing the output lists in a text file, so that I can use that later to plot, using MATLAB
+    output_file_name = peptide_sequence_name + ".txt"
+    f = open(output_file_name, 'w')
+    str1 = "score_list = " + str(score_list) + "\n"
+    str2 = "distance_list = " + str(distance_list) + "\n"
+    str3 = "core1_rmsd_list = " + str(core1_rmsd_list) + "\n"
+    str4 = "peptide_rmsd_list = " + str(peptide_rmsd_list) + "\n"
+    f.write(str1)
+    f.write(str2)
+    f.write(str3)
+    f.write(str4)
+    f.close()
+    
     
     return answer_pose
