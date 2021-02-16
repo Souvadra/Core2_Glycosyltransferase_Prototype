@@ -1,0 +1,17 @@
+ATH; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "ATH");
+ATP; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "ATP");
+GTG; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "GTG");
+KTW; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "KTW");
+LTG; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "LTG");
+PTK; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "PTK");
+RTP; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "RTP");
+STP; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "STP");
+TTP; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "TTP");
+TTT; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "TTT");
+WTP; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "WTP");
+WTY; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "WTY");
+ATY; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "ATY");
+ETS; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "ETS");
+FTI; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "FTI");
+QTR; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "QTR");
+YTR; myFunction(core1_rmsd_list, distance_list, peptide_rmsd_list, score_list, "YTR");
