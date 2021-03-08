@@ -44,17 +44,24 @@ toRelax = True
 ## Prepare the base peptide 
 base_pose = basePeptidePrep.basePeptideBuild(base_seq, base_position, base_sugar)
 print(base_pose)
+base_pose.dump_pdb("STP_base_peptide.pdb")
 
 ## Addition of peptide and sugar motif 
-enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,1, reference_pose_file, base_seq, toRelax)
-output_name = "deployment_" + "3OTK_" + base_seq + ".pdb"
+print(enzyme_pose.pdb_info().pdb2pose('A',598))
+print(enzyme_pose.pdb_info().pdb2pose('A',599))
+
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,2, reference_pose_file, base_seq, toRelax)
+output_name = "deployment_" + "3OTK_trail_constraints_" + base_seq + "_testing1.pdb"
 sugars_and_enzyme_pose.dump_pdb(output_name)
 
 ##########################################################################################
 #############                    Calculating RMSD                           ##############
 ##########################################################################################
+<<<<<<< HEAD
 ''''
+=======
+'''
+>>>>>>> 30096a6dabdbb84213f34766e0ddfaa403759a06
 allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 allEnzyme_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 for j in range(1,372):
