@@ -15,7 +15,7 @@ import basePeptidePrep
 import addBaseSugarAndEnzyme
 
 ## Pyrosetta Initialization
-pyrosetta.init('-include_sugars -write_pdb_link_records -ex1 -ex2 -alternate_3_letter_codes pdb_sugar -auto_detect_glycan_connections -min_bond_length 1.1 -max_bond_length 1.5 -ignore_zero_occupancy false -ignore_unrecognized_res false')
+pyrosetta.init('-include_sugars -ex1 -ex2 -alternate_3_letter_codes pdb_sugar -auto_detect_glycan_connections -min_bond_length 1.1 -max_bond_length 1.5 -ignore_zero_occupancy false -ignore_unrecognized_res false')
 
 ## Command Line Arguments 
 '''
@@ -44,16 +44,21 @@ toRelax = True
 ## Prepare the base peptide 
 base_pose = basePeptidePrep.basePeptideBuild(base_seq, base_position, base_sugar)
 print(base_pose)
+base_pose.dump_pdb("STP_base_peptide.pdb")
 
 ## Addition of peptide and sugar motif 
 enzyme_pose = pose_from_pdb(input_enzyme_file)
-sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,25, reference_pose_file, base_seq, toRelax)
-output_name = "deployment_" + "3OTK_" + base_seq + ".pdb"
+print(enzyme_pose.pdb_info().pdb2pose('A',598))
+print(enzyme_pose.pdb_info().pdb2pose('A',599))
+
+sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,2, reference_pose_file, base_seq, toRelax)
+output_name = "deployment_" + "3OTK_trail_constraints_" + base_seq + "_testing1.pdb"
 sugars_and_enzyme_pose.dump_pdb(output_name)
 
 ##########################################################################################
 #############                    Calculating RMSD                           ##############
 ##########################################################################################
+'''
 allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 allEnzyme_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 for j in range(1,372):
@@ -78,3 +83,4 @@ core1_rmsd.set_residue_selector_super_reference(allEnzyme_reference)
 core1_rmsd.set_rmsd_type(pyrosetta.rosetta.core.scoring.rmsd_all_heavy)
 my_RMSD = core1_rmsd.calculate(sugars_and_enzyme_pose)
 print("The RMSD of the core1 sugar: ", my_RMSD)
+'''
