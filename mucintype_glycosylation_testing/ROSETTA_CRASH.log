@@ -1,0 +1,158 @@
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+1067.master.bc36ab47069
+[COMMIT_DATE]: 2021-02-22T15:12:27
+[APPLICATION]: /home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "8.3.0"
+[STDLIB]: libstdc++ version 20190406
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1.pdb -out:overwrite -out:nstruct=1 -out:prefix=output/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=375 -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=sugar -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp=false -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=3 -carbohydrates:glycopeptide_docking:output_distance_metrics=false -constraints:cst_fa_file=input/3OTK_XTX.constraints
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(backtrace_string[abi:cxx11](int)+0x44) [0x7f24e9c53114]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe4) [0x7f24e9c82154]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xfb) [0x7f24e9c5751b]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x34) [0x7f24e9c57174]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.2.so(core::kinematics::FoldTree::add_edge(unsigned long, unsigned long, int)+0xff) [0x7f24eae10ccf]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.7.so(protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::shared_ptr<core::kinematics::FoldTree>)+0x4f5) [0x7f24f5f87ec5]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.7.so(protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&)+0x169b) [0x7f24f5f6724b]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0xd3a) [0x7f24eed1468a]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x14e) [0x7f24eed15d2e]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::FileSystemJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x47) [0x7f24eecfe387]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x285e) [0x560ecc4b085e]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xeb) [0x7f24e82c609b]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x2ada) [0x560ecc4b0ada]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/FoldTree.cc
+[LINE]: 847
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Assertion `stop > 0` failed.
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+1067.master.bc36ab47069
+[COMMIT_DATE]: 2021-02-22T15:12:27
+[APPLICATION]: /home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "8.3.0"
+[STDLIB]: libstdc++ version 20190406
+[START_OPTIONS]
+ -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1.pdb -out:overwrite -out:nstruct=10 -out:prefix=output/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=375D -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=sugar -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp=false -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=30 -carbohydrates:glycopeptide_docking:output_distance_metrics=false
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(backtrace_string[abi:cxx11](int)+0x44) [0x7fd8e138d114]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe4) [0x7fd8e13bc154]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xfb) [0x7fd8e139151b]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x34) [0x7fd8e1391174]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::is_residue_type_recognized(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::shared_ptr<core::chemical::ResidueType const>, std::allocator<std::shared_ptr<core::chemical::ResidueType const> > > const&)+0x5fb) [0x7fd8e2fbcbcb]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::is_residue_type_recognized(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool&)+0x1a3) [0x7fd8e2fc5503]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::pass_2_resolve_residue_types()+0x689) [0x7fd8e2fc6f39]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::build_pose(core::io::StructFileRep const&, core::pose::Pose&)+0xb6) [0x7fd8e2fc8bf6]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::build_pose_as_is(std::shared_ptr<core::io::StructFileRep>, core::pose::Pose&, core::chemical::ResidueTypeSet const&, core::import_pose::ImportPoseOptions const&)+0xc2) [0x7fd8e5d9aba2]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::build_pose(std::shared_ptr<core::io::StructFileRep>, core::pose::Pose&, core::chemical::ResidueTypeSet const&, core::import_pose::ImportPoseOptions const&)+0x7d) [0x7fd8e5d9ad1d]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, core::chemical::ResidueTypeSet const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType)+0x689) [0x7fd8e5d9b4c9]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType)+0x50) [0x7fd8e5d9ffa0]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, core::import_pose::FileType)+0x3a) [0x7fd8e5da009a]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::PDBJobInputter::pose_from_job(core::pose::Pose&, std::shared_ptr<protocols::jd2::Job>)+0xd7c) [0x7fd8e648794c]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x19d2) [0x7fd8e644f322]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x14e) [0x7fd8e644fd2e]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::FileSystemJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x47) [0x7fd8e6438387]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x285e) [0x56165a35585e]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xeb) [0x7fd8dfa0009b]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x2ada) [0x56165a355ada]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/io/pose_from_sfr/PoseFromSFRBuilder.cc
+[LINE]: 1442
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Unrecognized residue: Glc; did you intend to use the -include_sugars flag?
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+1067.master.bc36ab47069
+[COMMIT_DATE]: 2021-02-22T15:12:27
+[APPLICATION]: /home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "8.3.0"
+[STDLIB]: libstdc++ version 20190406
+[START_OPTIONS]
+ -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1.pdb -out:overwrite -out:nstruct=10 -out:prefix=output/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=375D -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=sugar -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp=false -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=30 -carbohydrates:glycopeptide_docking:output_distance_metrics=false
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(backtrace_string[abi:cxx11](int)+0x44) [0x7f6b39883114]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe4) [0x7f6b398b2154]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xfb) [0x7f6b3988751b]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x34) [0x7f6b39887174]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::is_residue_type_recognized(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, utility::vector1<std::shared_ptr<core::chemical::ResidueType const>, std::allocator<std::shared_ptr<core::chemical::ResidueType const> > > const&)+0x5fb) [0x7f6b3b4b2bcb]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::is_residue_type_recognized(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool&)+0x1a3) [0x7f6b3b4bb503]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::pass_2_resolve_residue_types()+0x689) [0x7f6b3b4bcf39]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.3.so(core::io::pose_from_sfr::PoseFromSFRBuilder::build_pose(core::io::StructFileRep const&, core::pose::Pose&)+0xb6) [0x7f6b3b4bebf6]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::build_pose_as_is(std::shared_ptr<core::io::StructFileRep>, core::pose::Pose&, core::chemical::ResidueTypeSet const&, core::import_pose::ImportPoseOptions const&)+0xc2) [0x7f6b3e290ba2]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::build_pose(std::shared_ptr<core::io::StructFileRep>, core::pose::Pose&, core::chemical::ResidueTypeSet const&, core::import_pose::ImportPoseOptions const&)+0x7d) [0x7f6b3e290d1d]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, core::chemical::ResidueTypeSet const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType)+0x689) [0x7f6b3e2914c9]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType)+0x50) [0x7f6b3e295fa0]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libcore.6.so(core::import_pose::pose_from_file(core::pose::Pose&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool, core::import_pose::FileType)+0x3a) [0x7f6b3e29609a]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::PDBJobInputter::pose_from_job(core::pose::Pose&, std::shared_ptr<protocols::jd2::Job>)+0xd7c) [0x7f6b3e97d94c]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::run_one_job(std::shared_ptr<protocols::moves::Mover>&, long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, unsigned long&, unsigned long&, bool)+0x19d2) [0x7f6b3e945322]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::JobDistributor::go_main(std::shared_ptr<protocols::moves::Mover>)+0x14e) [0x7f6b3e945d2e]
+/home/souvadra/rosetta/Rosetta/main/source/build/src/release/linux/4.19/64/x86/gcc/8/default/libprotocols.1.so(protocols::jd2::FileSystemJobDistributor::go(std::shared_ptr<protocols::moves::Mover>)+0x47) [0x7f6b3e92e387]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x285e) [0x5642e30cb85e]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xeb) [0x7f6b37ef609b]
+/home/souvadra/rosetta/Rosetta/main/source/bin/mucintypeglycosylation.linuxgccrelease(+0x2ada) [0x5642e30cbada]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/io/pose_from_sfr/PoseFromSFRBuilder.cc
+[LINE]: 1442
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Unrecognized residue: Glc; did you intend to use the -include_sugars flag?
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
