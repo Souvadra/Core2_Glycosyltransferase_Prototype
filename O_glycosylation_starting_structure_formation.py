@@ -1,3 +1,19 @@
+# (c) Copyright Rosetta Commons Member Institutions. 
+# (c) This file is part of the Rosetta software suite and is made available under license. 
+# (c) The Rosetta software is developed by the contributing members of the Rosetta Commons. 
+# (c) For more information, see http://www.rosettacommons.org. Questions about this can be 
+# (c) addressed to University of Washington CoMotion, email: license@uw.edu. 
+"""Brief:   This PyRosetta script does blah.blah blah blah 
+
+Params:  ./blah.py .pdb 
+
+Example: ./blah.py foo.pdb 1000
+
+Remarks: Blah blah blah, blah, blah.
+
+Author:  Jason W. Labonte
+
+"""
 from pyrosetta import *
 from pyrosetta.rosetta import *
 from pyrosetta.rosetta.protocols.carbohydrates import *
@@ -15,16 +31,16 @@ from pyrosetta.rosetta.core.select.movemap import MoveMapFactory
 sugar_dictionary = {}
 sugar_dictionary["core1"] = "b-D-Galp-(1->3)-a-D-GalpNAc"
 
-class O_glycosylation_starting_structure_formation:
+class OGlycosylationStartingStructureFormation:
     def __init__(self):
-        self.acceptor_peptide_chain = None
-        self.acceptor_peptide_sugar = None
+        self.acceptor_peptide_sequence = None
+        self.acceptor_peptide_sugar_name = None
         self.acceptor_peptide_glycosylation_location = None
         #self.enzyme_pose_file = None 
         self.reference_pose_file = None 
         self.constraints_file = None
         self.RelaxInterface = False 
-        self.decoy_numbers = 2
+        self.decoy_numbers = None
 
         # These variables are not user inputs 
         self.acceptor_peptide_pose = None 
@@ -41,29 +57,29 @@ class O_glycosylation_starting_structure_formation:
 
     def _relax_sugars(self, input_pose):
         sampler = GlycanSampler()
-        sampler.set_rounds(100)
+        sampler.set_rounds(100)     
         sampler.apply(input_pose)
 
-    def prepare_acceptor_peptide_with_glycan(self):
-        ''' This program takes the sequence of the peptide (the peptide must have one 
+    def _prepare_acceptor_peptide_with_glycan(self):
+        """ This program takes the sequence of the peptide (the peptide must have one 
         THR residue for glycosylation to happen and should be 2-3 residue long)
         and outputs a pose object of the sequence with the core1 sugar glycosylated 
-        on the specified THR residue. '''
-        self.acceptor_peptide_pose = pose_from_sequence(self.acceptor_peptide_chain)
-        if self.acceptor_peptide_sugar != None: 
+        on the specified THR residue. """
+        self.acceptor_peptide_pose = pose_from_sequence(self.acceptor_peptide_sequence)
+        if self.acceptor_peptide_sugar_name != None: 
             glycosylator = SimpleGlycosylateMover()
-        if self.acceptor_peptide_sugar not in sugar_dictionary: print("The sugar not known!!")
-        glycosylator.set_glycosylation(sugar_dictionary[self.acceptor_peptide_sugar])
+        if self.acceptor_peptide_sugar_name not in sugar_dictionary: print("The sugar not known!!")
+        glycosylator.set_glycosylation(sugar_dictionary[self.acceptor_peptide_sugar_name])
         glycosylator.set_position(self.acceptor_peptide_glycosylation_location)
         glycosylator.apply(self.acceptor_peptide_pose)
         self._relax_sugars(self.acceptor_peptide_pose) 
 
-    def _mergeTwoPoseByJump(self, enzyme_pose, acceptor_peptide_pose):
+    def _merge_two_pose_by_jump(self, enzyme_pose, acceptor_peptide_pose):
         """merge the base pose into enzyme pose without making any covalent bond"""
         anchor_point = int(enzyme_pose.total_residue()) - 2 # just to make sure that the UDP-sugar remains the last residues in the whole pose
         enzyme_pose.append_pose_by_jump(acceptor_peptide_pose, anchor_point)
 
-    def _makeFoldTreeDockingFriendly(self, enzyme_pose):
+    def _make_fold_tree_docking_friendly(self, enzyme_pose):
         chain_begin_list = []
         chain_end_list = []
         chain_begin_list.append(int(enzyme_pose.chain_begin(1)))
@@ -146,7 +162,7 @@ class O_glycosylation_starting_structure_formation:
         enzyme_pose.fold_tree(ft_docking)
         print(enzyme_pose.fold_tree())
 
-    def _largeRigidBodyMoves(self, curr_enzyme_pose):
+    def _large_rigid_body_moves(self, curr_enzyme_pose):
         rigid_body = pyrosetta.rosetta.protocols.rigid.RigidBodyPerturbNoCenterMover()
         rigid_body.add_jump(1)
         rigid_body.rot_magnitude(10)
@@ -167,7 +183,7 @@ class O_glycosylation_starting_structure_formation:
         self.sfxn.show(curr_enzyme_pose)
         return curr_enzyme_pose
 
-    def _finerRigidBodyMove(self, curr_enzyme_pose):
+    def _finer_rigid_body_move(self, curr_enzyme_pose):
         rigid_body_trans = pyrosetta.rosetta.protocols.rigid.RigidBodyPerturbNoCenterMover()
         rigid_body_trans.add_jump(1)
         rigid_body_trans.rot_magnitude(0)
@@ -196,7 +212,7 @@ class O_glycosylation_starting_structure_formation:
         self.sfxn.show(curr_enzyme_pose)
         return curr_enzyme_pose
 
-    def _relaxOnlyAcceptorPeptide(self, curr_enzyme_pose):
+    def _relax_only_acceptor_peptide(self, curr_enzyme_pose):
         tf = pyrosetta.rosetta.core.pack.task.TaskFactory()
         tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
         tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
@@ -223,10 +239,10 @@ class O_glycosylation_starting_structure_formation:
         fr.apply(curr_enzyme_pose)    
         self.sfxn.show(curr_enzyme_pose)   
 
-    def _relaxTheInterface(self, curr_enzyme_pose):
+    def _relax_the_tnterface(self, curr_enzyme_pose):
         print("done nothing")
 
-    def addAcceptorPeptideAndEnzyme(self, decoy_numbers):
+    def _add_acceptor_peptide_and_enzyme(self, decoy_numbers):
         """ This program takes the base sugar pose and the pose of the enzyme with donor moiety
         and the constraints and make sure the they obey the constraint in subsequent relax
         procedure as a procedure to bypass manual overlaying using PyMOL. """
@@ -237,7 +253,7 @@ class O_glycosylation_starting_structure_formation:
         self.initial_energy = self.sfxn(self.input_enzyme_pose)
 
         # merging two poses to form one 
-        self._mergeTwoPoseByJump(self.input_enzyme_pose, self.acceptor_peptide_pose)
+        self._merge_two_pose_by_jump(self.input_enzyme_pose, self.acceptor_peptide_pose)
         
         # Adding the constraints to the score term
         self.sfxn.set_weight(atom_pair_constraint, 1.0)
@@ -245,11 +261,11 @@ class O_glycosylation_starting_structure_formation:
         print(self.sfxn.show(self.input_enzyme_pose))
 
         # Change the FoldTree to suite Docking protocol 
-        self._makeFoldTreeDockingFriendly(self.input_enzyme_pose)
+        self._make_fold_tree_docking_friendly(self.input_enzyme_pose)
 
         # Defining the reference_pose for peptide-RMSD calculation
         # and Initializing the output lists
-        if self.reference_pose_file != None:
+        if self.reference_pose_file:
             self.reference_pose = pose_from_file(self.reference_pose_file)
             peptide_reference_pose = self.input_enzyme_pose.clone()
             score_list = []  
@@ -262,14 +278,14 @@ class O_glycosylation_starting_structure_formation:
         for trial_number in range(0,decoy_numbers):
             print("Decoy Number: " + str(trial_number))
             curr_enzyme_pose = self.input_enzyme_pose.clone()
-            curr_enzyme_pose = self._largeRigidBodyMoves(curr_enzyme_pose)
-            curr_enzyme_pose = self._finerRigidBodyMove(curr_enzyme_pose)
+            curr_enzyme_pose = self._large_rigid_body_moves(curr_enzyme_pose)
+            curr_enzyme_pose = self._finer_rigid_body_move(curr_enzyme_pose)
             if self.RelaxInterface not in [True, False]:
                 print("RelaxInterface must be a boolean True or False !!!")
             if self.RelaxInterface == False:
-                self._relaxOnlyAcceptorPeptide(curr_enzyme_pose)
+                self._relax_only_acceptor_peptide(curr_enzyme_pose)
             else:
-                self._relaxTheInterface(curr_enzyme_pose)
+                self._relax_the_tnterface(curr_enzyme_pose)
             # take the acceptor_peptide_with_sugar 10 A back
             # dock_perturb the acceptor_peptide_with_sugar
             # slide it into contact 
@@ -278,7 +294,7 @@ class O_glycosylation_starting_structure_formation:
                 minimum_score = self.sfxn(curr_enzyme_pose)
 
             ## RMSD and stuff like that for benchmarking purpose
-            if self.reference_pose_file != None:
+            if self.reference_pose_file:
                 score_list.append(self.sfxn(curr_enzyme_pose))
                 atom1 = curr_enzyme_pose.residue(int(curr_enzyme_pose.chain_end(self.donor_chain))).xyz("C1") 
                 atom2 = curr_enzyme_pose.residue(int(curr_enzyme_pose.chain_end(self.acceptor_chain))+1).xyz("O6") 
@@ -322,33 +338,33 @@ class O_glycosylation_starting_structure_formation:
                 ## ---------------------------------------------------------------------------------------------------
 
         print(self.sfxn.show(self.output_enzyme_pose))
-        if self.reference_pose_file != None:
+        if self.reference_pose_file:
             print("score_list = ", score_list)
             print("distance_list = ", distance_list)
             print("core1_rmsd_list = ", core1_rmsd_list)
             print("peptide_rmsd_list = ", peptide_rmsd_list)
 
-            output_file_name = "O_glycosylation_starting_structure_benchmark_" + self.acceptor_peptide_chain + ".txt"
-            f = open(output_file_name, 'w')
+            output_file_name = "O_glycosylation_starting_structure_benchmark_" + self.acceptor_peptide_sequence + ".txt"
+            file_opened = open(output_file_name, 'w')
             str1 = "score_list = " + str(score_list) + "\n"
             str2 = "distance_list = " + str(distance_list) + "\n"
             str3 = "core1_rmsd_list = " + str(core1_rmsd_list) + "\n"
             str4 = "peptide_rmsd_list = " + str(peptide_rmsd_list) + "\n"
-            f.write(str1)
-            f.write(str2)
-            f.write(str3)
-            f.write(str4)
-            f.close()
+            file_opened.write(str1)
+            file_opened.write(str2)
+            file_opened.write(str3)
+            file_opened.write(str4)
+            file_opened.close()
 
     def apply(self, input_pose):
         self.input_enzyme_pose = input_pose
-        self.prepare_acceptor_peptide_with_glycan()
-        self.addAcceptorPeptideAndEnzyme(self.decoy_numbers)
+        self._prepare_acceptor_peptide_with_glycan()
+        self._add_acceptor_peptide_and_enzyme(self.decoy_numbers)
 
 if __name__=="__main__":
-    mover = O_glycosylation_starting_structure_formation()
-    mover.acceptor_peptide_chain = "ETTSHST"
-    mover.acceptor_peptide_sugar = "core1"
+    mover = OGlycosylationStartingStructureFormation()
+    mover.acceptor_peptide_sequence = "ETTSHST"
+    mover.acceptor_peptide_sugar_name = "core1"
     mover.acceptor_peptide_glycosylation_location = 3
     mover.reference_pose_file = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
     mover.constraints_file = "3OTK_constraints_file.cst"
@@ -361,5 +377,5 @@ if __name__=="__main__":
     enzyme_pose = pose_from_pdb(enzyme_pose_file)
     mover.apply(enzyme_pose)
 
-    #mover.prepare_acceptor_peptide_with_glycan()
-    #mover.addAcceptorPeptideAndEnzyme(2)
+    #mover._prepare_acceptor_peptide_with_glycan()
+    #mover._add_acceptor_peptide_and_enzyme(2)
