@@ -319,9 +319,14 @@ class OGlycosylationStartingStructureFormation:
                 self._relax_the_interface(curr_enzyme_pose)
             # take the acceptor_peptide_with_sugar 10 A back --------------------------------------------------------------
             translation_magnitude = 10
-            
+            rigid_body_jump = 1
+
+            translate_away = pyrosetta.rosetta.protocols.rigid.RigidBodyTransMover(curr_enzyme_pose, rigid_body_jump)
+            translate_away.step_size(translation_magnitude)
             # dock_perturb the acceptor_peptide_with_sugar ----------------------------------------------------------------
             # slide it into contact ---------------------------------------------------------------------------------------
+            
+            # --------------------------------------------------------------------------------------------------------------
             if self.sfxn(curr_enzyme_pose) < minimum_score:
                 self.output_enzyme_pose = curr_enzyme_pose.clone()
                 minimum_score = self.sfxn(curr_enzyme_pose)
