@@ -230,6 +230,7 @@ class OGlycosylationStartingStructureFormation:
         mmf.all_bb(False)
         mmf.all_chi(True)
         mmf.add_bb_action(pyrosetta.rosetta.core.select.movemap.move_map_action.mm_enable, acceptor_peptide_selector)
+        print(tf.create_task_and_apply_taskoperations(curr_enzyme_pose))
 
         fr = pyrosetta.rosetta.protocols.relax.FastRelax()
         fr.set_task_factory(tf)
@@ -239,8 +240,38 @@ class OGlycosylationStartingStructureFormation:
         fr.apply(curr_enzyme_pose)    
         self.sfxn.show(curr_enzyme_pose)   
 
-    def _relax_the_tnterface(self, curr_enzyme_pose):
-        print("done nothing")
+    def _relax_the_interface(self, curr_enzyme_pose):
+        """This function packs the rotamers in the interface region of the acceptor
+        peptide and the enzyme."""
+        tf = pyrosetta.rosetta.core.pack.task.TaskFactory()
+        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.InitializeFromCommandline())
+        tf.push_back(pyrosetta.rosetta.core.pack.task.operation.RestrictToRepacking())
+
+        acceptor_peptide_selector = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
+        acceptor_peptide_neighborhood_selector = pyrosetta.rosetta.core.select.residue_selector.NeighborhoodResidueSelector()
+        for j in range(int(curr_enzyme_pose.chain_begin(self.acceptor_chain)),int(curr_enzyme_pose.total_residue()) + 1): # Can be generalised 
+            acceptor_peptide_selector.append_index(j)
+        acceptor_peptide_selector.apply(curr_enzyme_pose)
+        acceptor_peptide_neighborhood_selector.set_focus_selector(acceptor_peptide_selector)
+        acceptor_peptide_neighborhood_selector.set_include_focus_in_subset(True)
+
+        prevent_repackign_rlt = pyrosetta.rosetta.core.pack.task.operation.PreventRepackingRLT()
+        prevent_subset_repacking = pyrosetta.rosetta.core.pack.task.operation.OperateOnResidueSubset(prevent_repackign_rlt, acceptor_peptide_neighborhood_selector, flip_subset=True)
+
+        tf.push_back(prevent_subset_repacking)
+        mmf = MoveMapFactory()
+        mmf.all_bb(False)
+        mmf.all_chi(True)
+        mmf.add_bb_action(pyrosetta.rosetta.core.select.movemap.move_map_action.mm_enable, acceptor_peptide_neighborhood_selector)
+        print(tf.create_task_and_apply_taskoperations(curr_enzyme_pose))
+
+        fr = pyrosetta.rosetta.protocols.relax.FastRelax()
+        fr.set_task_factory(tf)
+        fr.set_scorefxn(self.sfxn)
+        fr.set_movemap_factory(mmf)
+        fr.max_iter(0)
+        fr.apply(curr_enzyme_pose)    
+        self.sfxn.show(curr_enzyme_pose)   
 
     def _add_acceptor_peptide_and_enzyme(self, decoy_numbers):
         """ This program takes the base sugar pose and the pose of the enzyme with donor moiety
@@ -285,10 +316,12 @@ class OGlycosylationStartingStructureFormation:
             if self.RelaxInterface == False:
                 self._relax_only_acceptor_peptide(curr_enzyme_pose)
             else:
-                self._relax_the_tnterface(curr_enzyme_pose)
-            # take the acceptor_peptide_with_sugar 10 A back
-            # dock_perturb the acceptor_peptide_with_sugar
-            # slide it into contact 
+                self._relax_the_interface(curr_enzyme_pose)
+            # take the acceptor_peptide_with_sugar 10 A back --------------------------------------------------------------
+            translation_magnitude = 10
+            
+            # dock_perturb the acceptor_peptide_with_sugar ----------------------------------------------------------------
+            # slide it into contact ---------------------------------------------------------------------------------------
             if self.sfxn(curr_enzyme_pose) < minimum_score:
                 self.output_enzyme_pose = curr_enzyme_pose.clone()
                 minimum_score = self.sfxn(curr_enzyme_pose)
@@ -368,8 +401,8 @@ if __name__=="__main__":
     mover.acceptor_peptide_glycosylation_location = 3
     mover.reference_pose_file = "/home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
     mover.constraints_file = "3OTK_constraints_file.cst"
-    mover.RelaxInterface = False 
-    mover.decoy_numbers = 2
+    mover.RelaxInterface = True 
+    mover.decoy_numbers = 1
 
     init_flags =  "-include_sugars -maintain_links -auto_detect_glycan_connections -alternate_3_letter_codes pdb_sugar" + " -constraints:cst_fa_file " + mover.constraints_file
     pyrosetta.init(init_flags)
