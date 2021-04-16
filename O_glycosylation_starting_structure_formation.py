@@ -13,7 +13,7 @@ Example: ./blah.py foo.pdb 1000
 
 Remarks: Blah blah blah, blah, blah.
 
-Author:  Jason W. Labonte
+Author: Souvadra Hati 
 
 """
 ## Import Standard Python libraries
@@ -61,6 +61,9 @@ class OGlycosylationStartingStructureFormation:
         self.constraints_file = None
         self.repack_interface = False 
         self.decoy_numbers = None
+        self.output_pdb = False 
+        self.output_pdb_directory = ""
+        self.output_pdb_name = "" 
 
         # These variables are not user inputs 
         self.acceptor_peptide_pose = None 
@@ -347,7 +350,8 @@ class OGlycosylationStartingStructureFormation:
             translate_away.step_size(translation_magnitude)
             translate_away.apply(curr_enzyme_pose)
             # dock_perturb the acceptor_peptide_with_sugar ----------------------------------------------------------------
-            
+            mover = pyrosetta.rosetta.protocols.docking.EllipsoidalRandomizationMover(rigid_body_jump,True,True)
+            mover.apply(curr_enzyme_pose)
             # slide it into contact ---------------------------------------------------------------------------------------
             slide = pyrosetta.rosetta.protocols.dokcing.FaDockingSlideIntoContact(rigid_body_jump, slide_axis)
             slide.apply(curr_enzyme_pose)
@@ -431,6 +435,14 @@ class OGlycosylationStartingStructureFormation:
         self._prepare_acceptor_peptide_with_glycan()
         self._add_acceptor_peptide_and_enzyme(self.decoy_numbers)
 
+        if self.output_pdb:
+            if self.output_pdb_directory != "":
+                if self.output_pdb_directory[-1] != "/":
+                    self.output_pdb_directory += "/"
+            output_name = self.output_pdb_directory + self.output_pdb_name + "_" + self.acceptor_peptide_sequence + ".pdb"
+            self.output_enzyme_pose.dump_pdb(output_name)
+
+
 def argument_parsing():
     info="""
         Will write something here after some time
@@ -455,6 +467,13 @@ def argument_parsing():
         help="Input the lcoation of the constraints file.")
     parser.add_argument('-decoy', '--decoy_numbers', type=int, required=False,
         default=1, help="Input the number of independent decoys the user wants.")
+    parser.add_argument('-out_pdb', '--output_pdb', type=bool, required=False, 
+        default=False, help="Enter True, if you want the pdb of the output file.")
+    parser.add_argument('-out_dir', '--ouput_pdb_directory', type=str, required=False,
+        default="", help="Input the direcotory where you want your output_pdb file \
+        to be saved.")
+    parser.add_argument('-out_name', '--output_pdb_name', type=str, required=False,
+        default="starting_structure", help="Input the name of the ouput_pdb file")
 
     return parser.parse_args()
 
@@ -469,6 +488,9 @@ if __name__=="__main__":
     mover.constraints_file = args.constraints_file
     mover.repack_interface = args.repack_interface
     mover.decoy_numbers = args.decoy_numbers
+    mover.output_pdb = args.output_pdb
+    mover.output_pdb_directory = args.ouput_pdb_directory
+    mover.output_pdb_name = args.output_pdb_name
 
     init_flags =  "-include_sugars -maintain_links -auto_detect_glycan_connections -alternate_3_letter_codes pdb_sugar" + " -constraints:cst_fa_file " + mover.constraints_file
     pyrosetta.init(init_flags)
@@ -479,7 +501,7 @@ if __name__=="__main__":
 
 """
 if __name__=="__main__":
-    mover = OGlycosylationStartingStructureFormation()
+    mover = imp.OGlycosylationStartingStructureFormation()
     mover.acceptor_peptide_sequence = "ETTSHST"
     mover.acceptor_peptide_sugar_name = "core1"
     mover.acceptor_peptide_glycosylation_location = 3
