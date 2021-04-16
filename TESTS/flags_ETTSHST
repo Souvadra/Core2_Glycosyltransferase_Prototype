@@ -1,0 +1,9 @@
+-pepseq ETTSHST
+-sugar core2 
+-gly_loc 3 
+-ref /home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb
+-rI True 
+-enzyme /home/souvadra/myGitFolders/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005_598_manually_removed.pdb
+-cnstr 3OTK_constraints_file_ETTSHST.cst
+-decoy 2 
+-out_pdb True
