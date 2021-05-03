@@ -101,6 +101,63 @@ class OGlycosylationStartingStructureFormation:
         glycosylator.set_position(self.acceptor_peptide_glycosylation_location)
         glycosylator.apply(self.acceptor_peptide_pose)
         self._relax_sugars(self.acceptor_peptide_pose)
+        self.acceptor_peptide_pose.dump_pdb("TESTING_1.pdb") #remove this line later
+        self.acceptor_peptide_pose = self._manual_renumbering(self.acceptor_peptide_pose, len(self.input_enzyme_pose.sequence()))
+        self.acceptor_peptide_pose.dump_pdb("TESTING_2.pdb") #remove this line later
+
+    def _manual_renumbering(self, pose, res_before):
+        """ QUICK AND DIRTY FIX for the inability of Rosetta to renumber 
+        the sugar links properly in the pdb files while merging them. In 
+        this code, I am basically dumpring the pose and renumbering all the 
+        atom numbering directly in the pdb file (as if there are 'res_before'
+        number of residues before that) and then retrieving that pdb file
+        separately (which now have the modified numbering)"""
+
+        pose.dump_pdb("temp_dumped_file.pdb")
+
+        dumping_file_name = "temp_dumped_file.pdb"
+        with open(dumping_file_name) as f: 
+            content = f.readlines()
+
+        with open('renumbered_file.pdb','w') as ff:
+            for line in content:
+                curr_line = line.split()
+                if len(curr_line) > 0:
+                    if curr_line[0] not in ['HETNAM','ATOM', 'HETATM','LINK']:
+                        ff.write(line)
+                    else:
+                        if curr_line[0] == 'HETNAM':
+                            out_num = str(int(curr_line[3])+res_before)
+                            in_num_len = len(curr_line[3])
+                            in_index = 3
+                        if curr_line[0] == 'HETATM':
+                            out_num = str(int(curr_line[5])+res_before)
+                            in_num_len = len(curr_line[5])
+                            in_index = 5
+                        if curr_line[0] == 'ATOM':
+                            out_num = str(int(curr_line[5])+res_before)
+                            in_num_len = len(curr_line[5])
+                            in_index = 5
+                        if curr_line[0] == 'LINK':
+                            out_num = str(int(curr_line[4])+res_before)
+                            in_num_len = len(curr_line[4])
+                            in_index = 4
+                        out_line = list(line)
+                        
+                        out_num_len = len(out_num)
+                        extra_left_space = out_num_len - in_num_len
+                        for i in range(16,len(line)):
+                            if line[i] == curr_line[in_index][0]:
+                                j = i - extra_left_space
+                                for char in out_num:
+                                    out_line[j] = char
+                                    j += 1
+                                break
+                        ff.write("".join(out_line))
+
+        pose = pyrosetta.pose_from_pdb('renumbered_file.pdb')
+        # Delete this renumbered_file after retrieval
+        return pose
 
     def _merge_two_pose_by_jump(self, enzyme_pose, acceptor_peptide_pose):
         """merge the base pose into enzyme pose without making any covalent bond"""
@@ -545,6 +602,7 @@ class OGlycosylationStartingStructureFormation:
         """
         self.input_enzyme_pose = input_pose
         self._prepare_acceptor_peptide_with_glycan()
+        x = input("do you wanna proceed???") # remove this line
         self._add_acceptor_peptide_and_enzyme(self.decoy_numbers)
 
         if self.output_pdb:
@@ -684,6 +742,7 @@ if __name__ == "__main__":
     enzyme_pose = pyrosetta.pose_from_pdb(args.enzyme_file)
     mover.apply(enzyme_pose)
 
+##############################################################################
 
 """
 if __name__=="__main__":
