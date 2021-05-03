@@ -15,7 +15,7 @@ Author: Souvadra Hati
 """
 ## Import Standard Python libraries
 import argparse
-
+import os
 ## Rosetta Specific Imports
 import pyrosetta
 from pyrosetta.rosetta.protocols.carbohydrates import SimpleGlycosylateMover
@@ -101,9 +101,9 @@ class OGlycosylationStartingStructureFormation:
         glycosylator.set_position(self.acceptor_peptide_glycosylation_location)
         glycosylator.apply(self.acceptor_peptide_pose)
         self._relax_sugars(self.acceptor_peptide_pose)
-        self.acceptor_peptide_pose.dump_pdb("TESTING_1.pdb") #remove this line later
-        self.acceptor_peptide_pose = self._manual_renumbering(self.acceptor_peptide_pose, len(self.input_enzyme_pose.sequence()))
-        self.acceptor_peptide_pose.dump_pdb("TESTING_2.pdb") #remove this line later
+        self.acceptor_peptide_pose = self._manual_renumbering(
+            self.acceptor_peptide_pose, len(self.input_enzyme_pose.sequence())
+        )
 
     def _manual_renumbering(self, pose, res_before):
         """ QUICK AND DIRTY FIX for the inability of Rosetta to renumber 
@@ -156,7 +156,7 @@ class OGlycosylationStartingStructureFormation:
                         ff.write("".join(out_line))
 
         pose = pyrosetta.pose_from_pdb('renumbered_file.pdb')
-        # Delete this renumbered_file after retrieval
+        os.remove('renumbered_file.pdb')
         return pose
 
     def _merge_two_pose_by_jump(self, enzyme_pose, acceptor_peptide_pose):
@@ -602,7 +602,6 @@ class OGlycosylationStartingStructureFormation:
         """
         self.input_enzyme_pose = input_pose
         self._prepare_acceptor_peptide_with_glycan()
-        x = input("do you wanna proceed???") # remove this line
         self._add_acceptor_peptide_and_enzyme(self.decoy_numbers)
 
         if self.output_pdb:
