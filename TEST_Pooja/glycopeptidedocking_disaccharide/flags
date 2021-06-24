@@ -1,0 +1,20 @@
+-in:file:s input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb
+#input/starting_structure_ETTSHST.pdb 
+#input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb
+-in:file:native input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb
+#input/starting_structure_ETTSHST.pdb
+#input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb
+-out:prefix output_editedinput/
+-include_sugars
+-nstruct 1
+-residue_to_glycosylate 373C
+-substrate_type peptide
+-sugardonor_residue 370
+-enable_backbone_moves_pp true
+-tree_type outward
+-low_res true
+-ex1
+-ex2aro
+-ntotal_backbone 10
+-nevery_interface 3
+-output_distance_metrics true

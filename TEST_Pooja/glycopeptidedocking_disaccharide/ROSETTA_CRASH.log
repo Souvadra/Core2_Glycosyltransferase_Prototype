@@ -1,0 +1,840 @@
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x00000001137818c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x00000001137817ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000113828270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000113828167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x0000000111374f63 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x0000000111375431 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x000000010d0d6af8 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&) + 920
+7   libprotocols_h.5.dylib              0x000000010d0d621d protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&) + 1581
+8   libprotocols.7.dylib                0x000000010b25e0f3 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 2963
+9   libprotocols.7.dylib                0x000000010b24bdde protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x000000010fd261dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x000000010fd236d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000010fd1e786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x0000000109f46a93 main + 771
+14  libdyld.dylib                       0x00007fff7693d3d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x0000000112de58c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x0000000112de57ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000112e8c270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000112e8c167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x00000001120a0a22 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x00000001120b23b2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x00000001122ecb3c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x0000000112285bb6 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x00000001105b8387 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x0000000110c4343a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 394
+10  libcore.3.dylib                     0x0000000110c3a5ca core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x0000000110c391b7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x000000010a3bf20c protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x000000010f3671dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x000000010f3646d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x000000010f35f786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x000000010962ba93 main + 771
+17  libdyld.dylib                       0x00007fff76b733d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x00000001159448c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x00000001159447ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x00000001159eb270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x00000001159eb167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x0000000114c07a22 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x0000000114c193b2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x0000000114e53b3c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x0000000114decbb6 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x0000000113118387 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x00000001137a943a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 394
+10  libcore.3.dylib                     0x00000001137a05ca core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x000000011379f1b7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x000000010cf0d20c protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x0000000111ec31dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x0000000111ec06d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x0000000111ebb786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x000000010c175a93 main + 771
+17  libdyld.dylib                       0x00007fff76b733d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x0000000118ee88c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x0000000118ee87ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000118f8f270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000118f8f167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x00000001183bca22 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x00000001183ce3b2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x0000000118608b3c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x00000001185a1bb6 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x00000001168d5387 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x0000000116f5f43a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 394
+10  libcore.3.dylib                     0x0000000116f565ca core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x0000000116f551b7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x000000011037520c protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x00000001156901dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x000000011568d6d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x0000000115688786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x000000010f5e0a93 main + 771
+17  libdyld.dylib                       0x00007fff76b733d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000010d7128c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000010d7127ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x000000010d7b9270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x000000010d7b9167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x000000010c9e3a22 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x000000010c9f53b2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x000000010cc2fb3c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x000000010cbc8bb6 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x000000010aefc387 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x000000010b58643a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 394
+10  libcore.3.dylib                     0x000000010b57d5ca core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x000000010b57c1b7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x0000000104a5320c protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x00000001099ff1dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x00000001099fc6d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x00000001099f7786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x0000000103cb4a93 main + 771
+17  libdyld.dylib                       0x00007fff76b733d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=outward -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+1   libutility.dylib                    0x00000001127c62a7 utility::signal_handler(int) + 183
+2   libsystem_platform.dylib            0x00007fff76d5eb5d _sigtramp + 29
+3   ???                                 0x00000000000000a0 0x0 + 160
+4   libcore.2.dylib                     0x0000000111c1bb3e core::conformation::Conformation::atom_tree_torsion(core::id::TorsionID const&) const + 174
+5   libcore.2.dylib                     0x0000000111c3fc2b core::conformation::Conformation::update_residue_torsions(unsigned long, bool) const + 347
+6   libcore.2.dylib                     0x0000000111c1b23d core::conformation::Conformation::update_residue_torsions() const + 93
+7   libcore.2.dylib                     0x0000000111c1e83f core::conformation::Conformation::setup_atom_tree() + 239
+8   libprotocols.7.dylib                0x0000000109d07c32 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 1746
+9   libprotocols.7.dylib                0x0000000109cf5dde protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x000000010ecac1dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x000000010eca96d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000010eca4786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x0000000108f5da93 main + 771
+14  libdyld.dylib                       0x00007fff76b733d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: SIGSEGV
+[LINE]: 11
+[START_MESSAGE]
+Segmentation Fault
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x0000000111a238c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x0000000111a237ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000111aca270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000111aca167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x0000000110ce4a22 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x0000000110cf63b2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x0000000110f30b3c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x0000000110ec9bb6 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x000000010f1fb387 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x000000010f88643a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 394
+10  libcore.3.dylib                     0x000000010f87d5ca core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x000000010f87c1b7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x0000000108ffe20c protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x000000010dfb21dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x000000010dfaf6d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x000000010dfaa786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x0000000108264a93 main + 771
+17  libdyld.dylib                       0x00007fff76b733d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x00000001143fd8c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x00000001143fd7ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x00000001144a4270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x00000001144a4167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x0000000111fd9f63 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x0000000111fda431 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x000000010d9f8af8 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&) + 920
+7   libprotocols_h.5.dylib              0x000000010d9f821d protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&) + 1581
+8   libprotocols.7.dylib                0x000000010b9fb0f3 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 2963
+9   libprotocols.7.dylib                0x000000010b9e8dde protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x00000001109831dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x00000001109806d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000011097b786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x000000010ac55a93 main + 771
+14  libdyld.dylib                       0x00007fff76b733d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927
+[COMMIT_DATE]: 2021-02-01T14:45:35
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000011202b8c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000011202b7ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x00000001120d2270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x00000001120d2167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x000000010fc09f63 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x000000010fc0a431 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x000000010b624af8 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&) + 920
+7   libprotocols_h.5.dylib              0x000000010b62421d protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&) + 1581
+8   libprotocols.7.dylib                0x00000001096220f3 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 2963
+9   libprotocols.7.dylib                0x000000010960fdde protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x000000010e5a81dc protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x000000010e5a56d2 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000010e5a0786 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x000000010887aa93 main + 771
+14  libdyld.dylib                       0x00007fff76b733d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000010ce8e8c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000010ce8e7ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x000000010cf35270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x000000010cf35167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x000000010aa4deb3 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x000000010aa4e381 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x0000000106327601 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&, bool) + 2033
+7   libprotocols_h.5.dylib              0x00000001063268d2 protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&, bool) + 1586
+8   libprotocols.7.dylib                0x00000001042d5b69 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 3273
+9   libprotocols.7.dylib                0x00000001042c30ae protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x00000001093f2a5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x00000001093eff52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x00000001093eb006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x0000000103528a93 main + 771
+14  libdyld.dylib                       0x00007fff7df983d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000010c1da8c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000010c1da7ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x000000010c281270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x000000010c281167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x000000010b496862 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x000000010b4a81f2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x000000010b6e2a9c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x000000010b67bb16 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x000000010997bc37 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x000000010a01295a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 410
+10  libcore.3.dylib                     0x000000010a00acea core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x000000010a0098d7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x00000001037144dc protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x0000000108721a5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x000000010871ef52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x000000010871a006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x0000000102976a93 main + 771
+17  libdyld.dylib                       0x00007fff7df983d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/starting_structure_ETTSHST.pdb -in:file:native=input/starting_structure_ETTSHST.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+1   libutility.dylib                    0x00000001134332a7 utility::signal_handler(int) + 183
+2   libsystem_platform.dylib            0x00007fff7e183b5d _sigtramp + 29
+3   ???                                 0x00007ffee61fc760 0x0 + 140732759263072
+4   libsystem_malloc.dylib              0x00007fff7e145c42 free_tiny + 169
+5   libcore.5.dylib                     0x00000001100fb098 core::pack::dunbrack::RotamericSingleResidueDunbrackLibrary<2ul, 2ul>::~RotamericSingleResidueDunbrackLibrary() + 120
+6   libcore.5.dylib                     0x00000001100fb12e core::pack::dunbrack::SemiRotamericSingleResidueDunbrackLibrary<2ul, 2ul>::~SemiRotamericSingleResidueDunbrackLibrary() + 14
+7   libcore.5.dylib                     0x0000000110266879 core::pack::dunbrack::RotamerLibrary::~RotamerLibrary() + 105
+8   libsystem_c.dylib                   0x00007fff7e03e3cf __cxa_finalize_ranges + 319
+9   libsystem_c.dylib                   0x00007fff7e03e6b3 exit + 55
+10  libprotocols.1.dylib                0x000000010f7b8e2f protocols::jd2::JobDistributor::jd2_signal_handler(int) + 703
+11  libsystem_platform.dylib            0x00007fff7e183b5d _sigtramp + 29
+12  libcore.2.dylib                     0x000000011252c5e8 core::kinematics::tree::BondedAtom::copy_coords(core::kinematics::tree::Atom const&) + 152
+13  libsystem_malloc.dylib              0x00007fff7e145d79 free_tiny + 480
+14  libcore.3.dylib                     0x0000000111135fae core::scoring::TenANeighborNode::~TenANeighborNode() + 14
+15  libutility.dylib                    0x00000001132e3a82 utility::graph::Graph::delete_everything() + 98
+16  libcore.3.dylib                     0x000000011113638d core::scoring::TenANeighborGraph::~TenANeighborGraph() + 29
+17  libcore.3.dylib                     0x0000000110f83005 core::scoring::Energies::copy_context_graphs(core::scoring::Energies const&) + 517
+18  libcore.3.dylib                     0x0000000110f851d4 core::scoring::Energies::operator=(core::scoring::Energies const&) + 8180
+19  libcore.3.dylib                     0x0000000110df9274 core::pose::Pose::operator=(core::pose::Pose const&) + 612
+20  libprotocols.1.dylib                0x000000010f620aa0 protocols::moves::MonteCarlo::boltzmann(double, core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, double, double, bool) + 64
+21  libprotocols.1.dylib                0x000000010f654142 protocols::moves::TrialMover::apply(core::pose::Pose&) + 130
+22  libprotocols.7.dylib                0x000000010a7b2ed1 protocols::glycopeptide_docking::GlycopeptideDockingLowResRefinement::sample_torsions(core::pose::Pose&, unsigned long, double&, std::__1::shared_ptr<core::kinematics::MoveMap>) + 401
+23  libprotocols.7.dylib                0x000000010a7b21d8 protocols::glycopeptide_docking::GlycopeptideDockingLowResRefinement::apply(core::pose::Pose&) + 2424
+24  libprotocols.7.dylib                0x000000010a7a8a5e protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 3342
+25  libprotocols.1.dylib                0x000000010f7b2a5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+26  libprotocols.1.dylib                0x000000010f7aff52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+27  libprotocols.1.dylib                0x000000010f7ab006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+28  mucintypeglycosylation.macosclangrelease 0x0000000109a03a93 main + 771
+29  libdyld.dylib                       0x00007fff7df983d5 start + 1
+30  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: SIGILL
+[LINE]: 4
+[START_MESSAGE]
+Illegal CPU instruction encountered
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x0000000117b998c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x0000000117b997ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000117c40270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000117c40167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.2.dylib                     0x0000000116e61862 core::kinematics::tree::Atom_::dihedral_between_bonded_children(core::kinematics::tree::Atom const&, core::kinematics::tree::Atom const&) const + 354
+5   libcore.2.dylib                     0x0000000116e731f2 core::kinematics::AtomTree::torsion_angle_dof_id(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, double&, bool) const + 4370
+6   libcore.2.dylib                     0x00000001170ada9c core::conformation::Conformation::torsion_angle(core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&, core::id::AtomID const&) const + 76
+7   libcore.2.dylib                     0x0000000117046b16 core::conformation::carbohydrates::get_glycosidic_torsion(unsigned long, core::conformation::Conformation const&, unsigned long) + 230
+8   libcore.4.dylib                     0x000000011534bc37 core::energy_methods::SugarBackboneEnergy::residue_energy(core::conformation::Residue const&, core::pose::Pose const&, core::scoring::EMapVector&) const + 455
+9   libcore.3.dylib                     0x00000001159df95a core::scoring::ScoreFunction::asym_eval_onebody_energies(core::pose::Pose&) const + 410
+10  libcore.3.dylib                     0x00000001159d7cea core::scoring::ScoreFunction::operator()(core::pose::Pose&) const + 586
+11  libcore.3.dylib                     0x00000001159d68d7 core::scoring::ScoreFunction::show(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, core::pose::Pose&) const + 39
+12  libprotocols.7.dylib                0x000000010f3694dc protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 1932
+13  libprotocols.1.dylib                0x00000001140fda5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+14  libprotocols.1.dylib                0x00000001140faf52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+15  libprotocols.1.dylib                0x00000001140f6006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+16  mucintypeglycosylation.macosclangrelease 0x000000010e2b0a93 main + 771
+17  libdyld.dylib                       0x00007fff7df983d5 start + 1
+18  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/kinematics/tree/Atom_.cc
+[LINE]: 484
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Atom_::dihedral_between_bonded_children: atoms not found!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000010ce498c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000010ce497ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x000000010cef0270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x000000010cef0167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x000000010aa08eb3 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x000000010aa09381 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x000000010526c601 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&, bool) + 2033
+7   libprotocols_h.5.dylib              0x000000010526b8d2 protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&, bool) + 1586
+8   libprotocols.7.dylib                0x00000001042d1b69 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 3273
+9   libprotocols.7.dylib                0x00000001042bf0ae protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x00000001093ada5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x00000001093aaf52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x00000001093a6006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x000000010351da93 main + 771
+14  libdyld.dylib                       0x00007fff7df983d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=docking -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000011386b8c0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000011386b7ef utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 207
+2   libutility.dylib                    0x0000000113912270 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x0000000113912167 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.3.dylib                     0x0000000111416eb3 core::pose::center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&) + 627
+5   libcore.3.dylib                     0x0000000111417381 core::pose::residue_center_of_mass(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> >) + 49
+6   libprotocols_h.5.dylib              0x000000010ce0e601 protocols::docking::setup_foldtree(core::pose::Pose const&, utility::vector1<bool, std::__1::allocator<bool> > const&, utility::vector1<int, std::__1::allocator<int> >&, core::kinematics::FoldTree&, bool) + 2033
+7   libprotocols_h.5.dylib              0x000000010ce0d8d2 protocols::docking::setup_foldtree(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, utility::vector1<int, std::__1::allocator<int> >&, bool) + 1586
+8   libprotocols.7.dylib                0x000000010adbeb69 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 3273
+9   libprotocols.7.dylib                0x000000010adac0ae protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x000000010fdb4a5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x000000010fdb1f52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000010fdad006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x000000010a010a93 main + 771
+14  libdyld.dylib                       0x00007fff7df983d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/util.cc
+[LINE]: 1422
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot compute center of mass of zero residues!
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2021.14.post.dev+55.ysrinivasan.glycosylation.1a2dbaedf3f
+[COMMIT_DATE]: 2021-04-16T11:12:56
+[APPLICATION]: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "10.0.1 (clang-1001.0.46.4)"
+[STDLIB]: libc++ version 7000
+[START_OPTIONS]
+ -in:include_sugars -in:file:s=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -in:file:native=input/deployment_3OTK_trail_constraints_STP_testing1_2.pdb -out:nstruct=1 -out:prefix=output_editedinput/ -packing:ex1 -packing:ex2aro -carbohydrates:glycopeptide_docking:residue_to_glycosylate=373C -carbohydrates:glycopeptide_docking:low_res -carbohydrates:glycopeptide_docking:substrate_type=peptide -carbohydrates:glycopeptide_docking:tree_type=outward -carbohydrates:glycopeptide_docking:enable_backbone_moves_pp -carbohydrates:glycopeptide_docking:sugardonor_residue=370 -carbohydrates:glycopeptide_docking:nevery_interface=3 -carbohydrates:glycopeptide_docking:ntotal_backbone=10 -carbohydrates:glycopeptide_docking:output_distance_metrics
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+1   libutility.dylib                    0x000000010a06e2a7 utility::signal_handler(int) + 183
+2   libsystem_platform.dylib            0x00007fff7e183b5d _sigtramp + 29
+3   ???                                 0x00000000000000a0 0x0 + 160
+4   libcore.2.dylib                     0x00000001094bfa9e core::conformation::Conformation::atom_tree_torsion(core::id::TorsionID const&) const + 174
+5   libcore.2.dylib                     0x00000001094e3b8b core::conformation::Conformation::update_residue_torsions(unsigned long, bool) const + 347
+6   libcore.2.dylib                     0x00000001094bf19d core::conformation::Conformation::update_residue_torsions() const + 93
+7   libcore.2.dylib                     0x00000001094c279f core::conformation::Conformation::setup_atom_tree() + 239
+8   libprotocols.7.dylib                0x000000010151e702 protocols::glycopeptide_docking::setup_glycosylation_foldtree(core::pose::Pose&, std::__1::shared_ptr<protocols::glycopeptide_docking::GlycopeptideDockingFlags>, std::__1::shared_ptr<core::kinematics::FoldTree>) + 2146
+9   libprotocols.7.dylib                0x000000010150c0ae protocols::glycopeptide_docking::GlycopeptideDockingProtocol::apply(core::pose::Pose&) + 862
+10  libprotocols.1.dylib                0x0000000106515a5c protocols::jd2::JobDistributor::run_one_job(std::__1::shared_ptr<protocols::moves::Mover>&, long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, unsigned long&, unsigned long&, bool) + 7772
+11  libprotocols.1.dylib                0x0000000106512f52 protocols::jd2::JobDistributor::go_main(std::__1::shared_ptr<protocols::moves::Mover>) + 194
+12  libprotocols.1.dylib                0x000000010650e006 protocols::jd2::FileSystemJobDistributor::go(std::__1::shared_ptr<protocols::moves::Mover>) + 70
+13  mucintypeglycosylation.macosclangrelease 0x000000010076ca93 main + 771
+14  libdyld.dylib                       0x00007fff7df983d5 start + 1
+15  ???                                 0x0000000000000002 0x0 + 2
+
+[END_BACKTRACE]
+
+[FILE]: SIGSEGV
+[LINE]: 11
+[START_MESSAGE]
+Segmentation Fault
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
