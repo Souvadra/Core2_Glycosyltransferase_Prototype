@@ -57,9 +57,6 @@ sugars_and_enzyme_pose.dump_pdb(output_name)
 ##########################################################################################
 #############                    Calculating RMSD                           ##############
 ##########################################################################################
-<<<<<<< HEAD
-''''
-=======
 '''
 >>>>>>> 30096a6dabdbb84213f34766e0ddfaa403759a06
 allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
