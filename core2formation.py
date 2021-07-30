@@ -34,7 +34,8 @@ Command Line Arguments:
 base_seq = str(sys.argv[1]) #"STP"
 base_position = int(sys.argv[2]) #2
 base_sugar = "core1"
-input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005.pdb"
+#input_enzyme_file = "/home/shati/Glycosyltransferase/glycan_sampler_pipeline/output_3OTK-closed-S217C/3OTK-closed-monomer-alpha-GlcNAc-S217C_0005_598_manually_removed.pdb"
+input_enzyme_file = "error_correction.pdb" # This is for checking only, should not be there int he final code 
 
 reference_pose_file  = "/home/shati/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb"
 constraints_file = "3OTK_constraints_file.cst" # "constraints_file.cst"
@@ -47,9 +48,9 @@ print(base_pose)
 base_pose.dump_pdb("STP_base_peptide.pdb")
 
 ## Addition of peptide and sugar motif 
-print(enzyme_pose.pdb_info().pdb2pose('A',598))
-print(enzyme_pose.pdb_info().pdb2pose('A',599))
-
+#print(enzyme_pose.pdb_info().pdb2pose('A',598))
+#print(enzyme_pose.pdb_info().pdb2pose('A',599))
+enzyme_pose = pose_from_pdb(input_enzyme_file)
 sugars_and_enzyme_pose = addBaseSugarAndEnzyme.addBaseSugarAndEnzyme(base_pose, enzyme_pose, constraints_file,2, reference_pose_file, base_seq, toRelax)
 output_name = "deployment_" + "3OTK_trail_constraints_" + base_seq + "_testing1.pdb"
 sugars_and_enzyme_pose.dump_pdb(output_name)
@@ -57,11 +58,7 @@ sugars_and_enzyme_pose.dump_pdb(output_name)
 ##########################################################################################
 #############                    Calculating RMSD                           ##############
 ##########################################################################################
-<<<<<<< HEAD
-''''
-=======
 '''
->>>>>>> 30096a6dabdbb84213f34766e0ddfaa403759a06
 allEnzyme_experimental = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 allEnzyme_reference = pyrosetta.rosetta.core.select.residue_selector.ResidueIndexSelector()
 for j in range(1,372):
