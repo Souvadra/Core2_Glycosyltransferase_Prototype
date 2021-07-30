@@ -716,7 +716,7 @@ def argument_parsing():
         "--constraints_file",
         type=str,
         required=True,
-        help="Input the lcoation of the constraints file.",
+        help="Input the location of the constraints file.",
     )
     parser.add_argument(
         "-decoy",
@@ -736,7 +736,7 @@ def argument_parsing():
     )
     parser.add_argument(
         "-out_dir",
-        "--ouput_pdb_directory",
+        "--output_pdb_directory",
         type=str,
         required=False,
         default="",
@@ -749,7 +749,7 @@ def argument_parsing():
         type=str,
         required=False,
         default="starting_structure",
-        help="Input the name of the ouput_pdb file",
+        help="Input the name of the output_pdb file",
     )
 
     return parser.parse_args()
@@ -768,7 +768,7 @@ if __name__ == "__main__":
     mover.repack_interface = args.repack_interface
     mover.decoy_numbers = args.decoy_numbers
     mover.output_pdb = args.output_pdb
-    mover.output_pdb_directory = args.ouput_pdb_directory
+    mover.output_pdb_directory = args.output_pdb_directory
     mover.output_pdb_name = args.output_pdb_name
 
     init_flags = (

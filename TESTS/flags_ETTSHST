@@ -1,5 +1,5 @@
 -pepseq ETTSHST
--sugar core2 
+-sugar core1 
 -gly_loc 3 
 -ref /home/souvadra/myGitFolders/Glycosyltransferase/Acceptor-Donor-Enzyme/GlcNAc-added-before-GalBGalNAc/3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb
 -rI True 
