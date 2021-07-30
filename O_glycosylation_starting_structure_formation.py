@@ -123,36 +123,76 @@ class OGlycosylationStartingStructureFormation:
             for line in content:
                 curr_line = line.split()
                 if len(curr_line) > 0:
-                    if curr_line[0] not in ['HETNAM','ATOM', 'HETATM','LINK']:
+                    if curr_line[0] not in ['HETNAM','ATOM', 'HETATM','LINK','SSBOND']:
                         ff.write(line)
                     else:
                         if curr_line[0] == 'HETNAM':
-                            out_num = str(int(curr_line[3])+res_before)
+                            out_num = str(int(curr_line[3]) - res_before)
                             in_num_len = len(curr_line[3])
                             in_index = 3
-                        if curr_line[0] == 'HETATM':
-                            out_num = str(int(curr_line[5])+res_before)
+                        if curr_line[0] in {'HETATM','ATOM'}:
+                            out_num = str(int(curr_line[5]) - res_before)
                             in_num_len = len(curr_line[5])
                             in_index = 5
-                        if curr_line[0] == 'ATOM':
-                            out_num = str(int(curr_line[5])+res_before)
-                            in_num_len = len(curr_line[5])
-                            in_index = 5
-                        if curr_line[0] == 'LINK':
-                            out_num = str(int(curr_line[4])+res_before)
-                            in_num_len = len(curr_line[4])
-                            in_index = 4
+                        if curr_line[0] in {'LINK', 'SSBOND'}:
+                            if curr_line[0] == 'LINK': 
+                                i1 = 4; i2 = 8
+                            if curr_line[0] == 'SSBOND':
+                                i1 = 3; i2 = 6
+
+                            out_num1 = str(int(curr_line[i1]) - res_before)
+                            in_num1_len = len(curr_line[i1])
+                            in_index1 = i1
+
+                            out_num2 = str(int(curr_line[i2]) - res_before)
+                            in_num2_len = len(curr_line[i2])
+                            in_index2 = i2
                         out_line = list(line)
                         
-                        out_num_len = len(out_num)
-                        extra_left_space = out_num_len - in_num_len
-                        for i in range(16,len(line)):
-                            if line[i] == curr_line[in_index][0]:
-                                j = i - extra_left_space
-                                for char in out_num:
-                                    out_line[j] = char
-                                    j += 1
-                                break
+                        index_dict = {}
+                        index_dict['ATOM'] = (22,25)
+                        index_dict['HETNAM'] = (16,19)
+                        index_dict['SSBOND'] = (16,20,30,34)
+                        index_dict['LINK'] = (22,25,52,55)
+                        index_dict['HETATM'] = (22,25)
+
+                        if curr_line[0] not in  {'LINK','SSBOND'}:
+                            out_num_len = len(out_num)
+                            extra_left_space = out_num_len - in_num_len
+                            index = index_dict[curr_line[0]][1]
+                            j = out_num_len - 1
+                            while index > index_dict[curr_line[0]][0]:
+                                if out_line[index] != " ":
+                                    out_line[index] = " "
+                                if j >= 0:
+                                    out_line[index] = out_num[j]
+                                    j -= 1
+                                index -= 1
+                        else:
+                            out_num1_len = len(out_num1)
+                            out_num2_len = len(out_num2)
+                            extra_left_space1 = out_num1_len - in_num1_len
+                            extra_left_space2 = out_num2_len - in_num2_len
+                            index1 = index_dict[curr_line[0]][1]
+                            index2 = index_dict[curr_line[0]][3]
+                            j1 = out_num1_len - 1
+                            j2 = out_num2_len - 1
+                            
+                            while index1 > index_dict[curr_line[0]][0]:
+                                if out_line[index1] != " ":
+                                    out_line[index1] = " "
+                                if j1 >= 0:
+                                    out_line[index1] = out_num1[j1]
+                                    j1 -= 1
+                                index1 -= 1
+                            while index2 > index_dict[curr_line[0]][2]:
+                                if out_line[index2] != " ":
+                                    out_line[index2] = " "
+                                if j2 >= 0:
+                                    out_line[index2] = out_num2[j2]
+                                    j2 -= 1
+                                index2 -= 1
+
                         ff.write("".join(out_line))
 
         pose = pyrosetta.pose_from_pdb('renumbered_file.pdb')

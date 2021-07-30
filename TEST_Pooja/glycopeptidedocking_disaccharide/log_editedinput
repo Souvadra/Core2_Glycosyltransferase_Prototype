@@ -1,0 +1,191 @@
+
+Initializing Rosetta...
+core.init: Checking for fconfig files in pwd and ./rosetta/flags 
+core.init: Rosetta version: 2020.50.post.dev+873.ysrinivasan.glycosylation.d448748b927 d448748b927555a21b4ef2b65fe0fc6f66ef6919 git@github.com:RosettaCommons/main.git 2021-02-01T14:45:35
+core.init: command: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease @flags
+basic.random.init_random_generator: 'RNG device' seed mode, using '/dev/urandom', seed=1433125852 seed_offset=0 real_seed=1433125852
+basic.random.init_random_generator: RandomGenerator:init: Normal mode, seed=1433125852 RG_type=mt19937
+core.init: Resolved executable path: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/source/bin/mucintypeglycosylation.macosclangrelease
+core.init: Looking for database based on location of executable: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/database/
+Preparing score function
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+core.chemical.GlobalResidueTypeSet: Finished initializing fa_standard residue type set.  Created 1645 residue types
+core.chemical.GlobalResidueTypeSet: Total time to initialize 1.09765 seconds.
+basic.io.database: Database file opened: scoring/score_functions/rama/fd/all.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+core.scoring.P_AA: shapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+core.scoring.ScoreFunctionFactory: The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoringManager: Creating CHI Energy Function.
+core.scoring.carbohydrates.CHIEnergyFunction: Setting up chi sampling
+core.scoring.ScoringManager: Creating carbohydrate omega preferences function.
+core.scoring.carbohydrates.OmegaPreferencesFunction: Setting up omega preference sampling
+core.scoring.ScoreFunctionFactory:  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+score function done
+core.import_pose.import_pose: File 'input/deployment_3OTK_trail_constraints_STP_testing1.pdb' automatically determined to be of type PDB
+core.io.util: Link between    2 C and    4 C is ill-formed - one/both residues don't exist!.
+core.io.util: Link between    4 C and    5 C is ill-formed - one/both residues don't exist!.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] UDP370 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Glc371 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal375 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal376 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  O1  on residue ->3)-alpha-D-Galp:reducing_end:2-AcNH 375
+core.conformation.Conformation: Found disulfide between residues 4 358
+core.conformation.Conformation: current variant for 4 CYS
+core.conformation.Conformation: current variant for 358 CYS
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 358 CYD
+core.conformation.Conformation: Found disulfide between residues 45 117
+core.conformation.Conformation: current variant for 45 CYS
+core.conformation.Conformation: current variant for 117 CYS
+core.conformation.Conformation: current variant for 45 CYD
+core.conformation.Conformation: current variant for 117 CYD
+core.conformation.Conformation: Found disulfide between residues 96 144
+core.conformation.Conformation: current variant for 96 CYS
+core.conformation.Conformation: current variant for 144 CYS
+core.conformation.Conformation: current variant for 96 CYD
+core.conformation.Conformation: current variant for 144 CYD
+core.conformation.Conformation: Found disulfide between residues 317 326
+core.conformation.Conformation: current variant for 317 CYS
+core.conformation.Conformation: current variant for 326 CYS
+core.conformation.Conformation: current variant for 317 CYD
+core.conformation.Conformation: current variant for 326 CYD
+core.conformation.carbohydrates.GlycanTreeSet: Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: Found 2 glycan trees.
+core.pack.pack_missing_sidechains: packing residue number 375 because of missing atom number 10 atom name  O1 
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015
+core.scoring.ScoreFunctionFactory: The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoreFunctionFactory:  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+basic.io.database: Database file opened: scoring/score_functions/elec_cp_reps.dat
+core.scoring.elec.util: Read 40 countpair representative atoms
+core.pack.dunbrack.RotamerLibrary: shapovalov_lib_fixes_enable option is true.
+core.pack.dunbrack.RotamerLibrary: shapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+core.pack.dunbrack.RotamerLibrary: Binary rotamer library selected: /Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+core.pack.dunbrack.RotamerLibrary: Using Dunbrack library binary file '/Users/saipooja/Documents/RosettaDevelopment/Rosetta/main/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.144344 seconds to load from binary
+core.pack.pack_rotamers: built 486 rotamers at 1 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed input/deployment_3OTK_trail_constraints_STP_testing1.pdb nstruct index 1
+core.import_pose.import_pose: File 'input/deployment_3OTK_trail_constraints_STP_testing1.pdb' automatically determined to be of type PDB
+core.io.util: Link between    2 C and    4 C is ill-formed - one/both residues don't exist!.
+core.io.util: Link between    4 C and    5 C is ill-formed - one/both residues don't exist!.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] UDP370 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Glc371 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal375 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal376 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  O1  on residue ->3)-alpha-D-Galp:reducing_end:2-AcNH 375
+core.conformation.Conformation: Found disulfide between residues 4 358
+core.conformation.Conformation: current variant for 4 CYS
+core.conformation.Conformation: current variant for 358 CYS
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 358 CYD
+core.conformation.Conformation: Found disulfide between residues 45 117
+core.conformation.Conformation: current variant for 45 CYS
+core.conformation.Conformation: current variant for 117 CYS
+core.conformation.Conformation: current variant for 45 CYD
+core.conformation.Conformation: current variant for 117 CYD
+core.conformation.Conformation: Found disulfide between residues 96 144
+core.conformation.Conformation: current variant for 96 CYS
+core.conformation.Conformation: current variant for 144 CYS
+core.conformation.Conformation: current variant for 96 CYD
+core.conformation.Conformation: current variant for 144 CYD
+core.conformation.Conformation: Found disulfide between residues 317 326
+core.conformation.Conformation: current variant for 317 CYS
+core.conformation.Conformation: current variant for 326 CYS
+core.conformation.Conformation: current variant for 317 CYD
+core.conformation.Conformation: current variant for 326 CYD
+core.conformation.carbohydrates.GlycanTreeSet: Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: Found 2 glycan trees.
+core.pack.pack_missing_sidechains: packing residue number 375 because of missing atom number 10 atom name  O1 
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015
+core.scoring.ScoreFunctionFactory: The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoreFunctionFactory:  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+core.pack.pack_rotamers: built 486 rotamers at 1 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB input/deployment_3OTK_trail_constraints_STP_testing1.pdb
+core.import_pose.import_pose: File 'input/deployment_3OTK_trail_constraints_STP_testing1.pdb' automatically determined to be of type PDB
+core.io.util: Link between    2 C and    4 C is ill-formed - one/both residues don't exist!.
+core.io.util: Link between    4 C and    5 C is ill-formed - one/both residues don't exist!.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] UDP370 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Glc371 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal375 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] Gal376 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  O1  on residue ->3)-alpha-D-Galp:reducing_end:2-AcNH 375
+core.conformation.Conformation: Found disulfide between residues 4 358
+core.conformation.Conformation: current variant for 4 CYS
+core.conformation.Conformation: current variant for 358 CYS
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 358 CYD
+core.conformation.Conformation: Found disulfide between residues 45 117
+core.conformation.Conformation: current variant for 45 CYS
+core.conformation.Conformation: current variant for 117 CYS
+core.conformation.Conformation: current variant for 45 CYD
+core.conformation.Conformation: current variant for 117 CYD
+core.conformation.Conformation: Found disulfide between residues 96 144
+core.conformation.Conformation: current variant for 96 CYS
+core.conformation.Conformation: current variant for 144 CYS
+core.conformation.Conformation: current variant for 96 CYD
+core.conformation.Conformation: current variant for 144 CYD
+core.conformation.Conformation: Found disulfide between residues 317 326
+core.conformation.Conformation: current variant for 317 CYS
+core.conformation.Conformation: current variant for 326 CYS
+core.conformation.Conformation: current variant for 317 CYD
+core.conformation.Conformation: current variant for 326 CYD
+core.conformation.carbohydrates.GlycanTreeSet: Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: Found 2 glycan trees.
+core.pack.pack_missing_sidechains: packing residue number 375 because of missing atom number 10 atom name  O1 
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015
+core.scoring.ScoreFunctionFactory: The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoreFunctionFactory:  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+core.pack.pack_rotamers: built 486 rotamers at 1 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+protocols.glycopeptide_docking.GlycopeptideDockingProtocol: setting up substrate chain
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: Upstream and downstream ABC C
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: 
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: ------------ FLAGS ------------
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: glycosylation_high_res_refinement:  1
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: glycosylation_low_res_refinement:   1
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: constraints:                        
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: first_residue_substrate:            375
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: last_residue_substrate:             376
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: anchor_residue_substrate:           373
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: residue_to_glycosylate:             373
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: jump_num_substrate:                 1
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: first_residue_enzyme:               1
+protocols.glycopeptide_docking.GlycopeptideDockingFlags: last_residue_enzyme:                369
+protocols.glycopeptide_docking.GlycopeptideDockingProtocol: 
+protocols.glycopeptide_docking.GlycopeptideDockingProtocol: Setting up fold tree...
+protocols.glycopeptide_docking.utils: Setting up or Overwriting foldtree.
+protocols.jd2.JobDistributor: [ ERROR ] 
+
+[ERROR] Exception caught by JobDistributor for job output_editedinput/deployment_3OTK_trail_constraints_STP_testing1_0001
+protocols.jd2.JobDistributor: [ WARNING ] output_editedinput/deployment_3OTK_trail_constraints_STP_testing1_0001 reported failure and will NOT retry
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 2 seconds
