@@ -6,6 +6,7 @@ reaction.
 
 # Use:
 Code: ```O_glycosylation_starting_structure_formation.py```
+
 Flags: 
 ```-pepseq```:      Input the one letter amino acid code of the acceptor peptide sequence.
 
@@ -15,7 +16,7 @@ Flags:
 
 ```-ref```:         If you want the Benchmarking to be done, input the location of the reference pdb file.
 
-```-rI``:           Input if you want to repack the interface region of the acceptor peptide and the enzyme.
+```-rI```:           Input if you want to repack the interface region of the acceptor peptide and the enzyme.
 
 ```-enzyme```:      Input the location of the enzyme + donor pdb file.
 
