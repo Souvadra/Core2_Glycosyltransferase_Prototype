@@ -4,6 +4,8 @@ elongation reaction of mucin-type (O-)glycosylation reaction.
 Currently it has been tested for core-1 to core-2 chain formation
 reaction. 
 
+The PyRosetta script can be used directly from command line using ```python3 O_glycosylation_starting_structure_formation.py <necessary flags>``` or by importing the ```.py``` file in another PyRosetta instance and then modifying the parameters from the class itself.
+
 # Code: 
 ```O_glycosylation_starting_structure_formation.py```
 
