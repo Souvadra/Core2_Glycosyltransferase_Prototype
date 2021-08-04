@@ -4,7 +4,8 @@ elongation reaction of mucin-type (O-)glycosylation reaction.
 Currently it has been tested for core-1 to core-2 chain formation
 reaction. 
 
-# Code: ```O_glycosylation_starting_structure_formation.py```
+# Code: 
+```O_glycosylation_starting_structure_formation.py```
 
 # Flags
 ```-pepseq```:      Input the one letter amino acid code of the acceptor peptide sequence.
