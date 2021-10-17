@@ -31,3 +31,20 @@ The PyRosetta script can be used directly from command line using ```python3 Pep
 ```-out_dir```:     Input the direcotory where you want your output_pdb file to be saved.
 
 ```-out_name```:    Input the name of the output_pdb file.
+
+# Execution Example
+## From Command Line 
+```cd EXAMPLE```
+```python3 ../PeptideGlycosylationStartingStructureGenerator.py -pepseq ETTSHST -sugar core1 -gly_loc 3 -ref 3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb -rI True -enzyme 3OTK-closed-monomer-alpha-GlcNAc-S217C_0005_598_manually_removed.pdb -cnstr 3OTK_constraints_file_ETTSHST.cst -decoy 2 -out_pdb True```
+
+This command builds a ETTSHST peptide, glycosylates the third residue of that peptide using core-2 sugar and makes the starting structure of a closed monomer of core 2 beta1,6-n-acetylglucosaminyltransferase (RCSB id: 3otk).
+
+Output: ```PeptideGlycosylationStartingStructureGenerator_ETTSHST.txt```
+
+## Using PyRosetta Script
+```cd EXAMPLE```
+```python3 run_example.py```
+
+Does the same job as above, just with STP peptide.
+
+Output: ```PeptideGlycosylationStartingStructureGenerator_STP.txt```
