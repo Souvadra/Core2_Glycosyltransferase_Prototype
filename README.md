@@ -1,13 +1,13 @@
-# O-glycosylation Starting Structure Formation
+# Peptide Glycosylation Starting Structure Generation
 This repository contains the PyRosetta script for building the starting structure of an 
 elongation reaction of mucin-type (O-)glycosylation reaction. 
 Currently it has been tested for core-1 to core-2 chain formation
-reaction. 
+reactions. 
 
-The PyRosetta script can be used directly from command line using ```python3 O_glycosylation_starting_structure_formation.py <necessary flags>``` or by importing the ```.py``` file in another PyRosetta instance and then modifying the parameters from the class itself.
+The PyRosetta script can be used directly from command line using ```python3 PeptideGlycosylationStartingStructureGenerator.py <necessary flags>``` or by importing the ```.py``` file in another PyRosetta instance and then modifying the parameters from the class itself.
 
 # Code: 
-```O_glycosylation_starting_structure_formation.py```
+```PeptideGlycosylationStartingStructureGenerator.py```
 
 # Flags
 ```-pepseq```:      Input the one letter amino acid code of the acceptor peptide sequence.
