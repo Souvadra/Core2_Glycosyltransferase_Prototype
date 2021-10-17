@@ -40,7 +40,7 @@ The PyRosetta script can be used directly from command line using ```python3 Pep
 
 This command builds a ETTSHST peptide, glycosylates the third residue of that peptide using core-2 sugar and makes the starting structure of a closed monomer of core 2 beta1,6-n-acetylglucosaminyltransferase (RCSB id: 3otk).
 
-Output: ```PeptideGlycosylationStartingStructureGenerator_ETTSHST.txt```
+Output: ```starting_structure_ETTSHST.txt```
 
 ## Using PyRosetta Script
 ```cd EXAMPLE```
@@ -49,4 +49,4 @@ Output: ```PeptideGlycosylationStartingStructureGenerator_ETTSHST.txt```
 
 Does the same job as above, just with STP peptide.
 
-Output: ```PeptideGlycosylationStartingStructureGenerator_STP.txt```
+Output: ```starting_structure_STP.txt```
