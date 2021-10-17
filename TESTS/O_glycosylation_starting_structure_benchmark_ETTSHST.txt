@@ -1,4 +1,0 @@
-score_list = [-199.8088774211143]
-distance_list = [10.963911880116955]
-core1_rmsd_list = [8.661372892503257]
-peptide_rmsd_list = [85.96642243357205]
