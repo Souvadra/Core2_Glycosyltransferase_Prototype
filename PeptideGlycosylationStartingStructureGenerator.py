@@ -52,7 +52,7 @@ sugar_dictionary["core1"] = "b-D-Galp-(1->3)-a-D-GalpNAc"
 
 ##############################################################################
 
-class OGlycosylationStartingStructureFormation:
+class PeptideGlycosylationStartingStructureGenerator:
     def __init__(self):
         self.acceptor_peptide_sequence = None
         self.acceptor_peptide_sugar_name = None
@@ -759,7 +759,7 @@ def argument_parsing():
 if __name__ == "__main__":
     args = argument_parsing()
 
-    mover = OGlycosylationStartingStructureFormation()
+    mover = PeptideGlycosylationStartingStructureGenerator()
     mover.acceptor_peptide_sequence = args.peptide_sequence
     mover.acceptor_peptide_sugar_name = args.sugar_name
     mover.acceptor_peptide_glycosylation_location = args.glycosylation_location
@@ -785,7 +785,7 @@ if __name__ == "__main__":
 
 """
 if __name__=="__main__":
-    mover = imp.OGlycosylationStartingStructureFormation()
+    mover = imp.PeptideGlycosylationStartingStructureGenerator()
     mover.acceptor_peptide_sequence = "ETTSHST"
     mover.acceptor_peptide_sugar_name = "core1"
     mover.acceptor_peptide_glycosylation_location = 3
