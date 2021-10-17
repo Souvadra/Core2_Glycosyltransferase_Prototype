@@ -619,7 +619,7 @@ class PeptideGlycosylationStartingStructureGenerator:
             print("peptide_rmsd_list = ", peptide_rmsd_list)
 
             output_file_name = (
-                "O_glycosylation_starting_structure_benchmark_"
+                "PeptideGlycosylationStartingStructureGenerator_"
                 + self.acceptor_peptide_sequence
                 + ".txt"
             )
