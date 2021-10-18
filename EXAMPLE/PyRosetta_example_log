@@ -1,0 +1,1842 @@
+core.init: {0} Checking for fconfig files in pwd and ./rosetta/flags 
+core.init: {0} Rosetta version: PyRosetta4.conda.linux.cxx11thread.serialization.CentOS.python37.Release r267 2020.40+release.f01fa77 f01fa77e7385c2c0bdac6e346b24a6d8d900e7c7 http://www.pyrosetta.org 2020-10-02T11:47:11
+core.init: {0} command: PyRosetta -include_sugars -maintain_links -auto_detect_glycan_connections -alternate_3_letter_codes pdb_sugar -constraints:cst_fa_file 3OTK_constraints_file_STP.cst -database /home/souvadra/anaconda3/envs/pyrosetta_env/lib/python3.7/site-packages/pyrosetta/database
+basic.random.init_random_generator: {0} 'RNG device' seed mode, using '/dev/urandom', seed=-1926462161 seed_offset=0 real_seed=-1926462161 thread_index=0
+basic.random.init_random_generator: {0} RandomGenerator:init: Normal mode, seed=-1926462161 RG_type=mt19937
+core.chemical.GlobalResidueTypeSet: {0} Finished initializing fa_standard residue type set.  Created 1641 residue types
+core.chemical.GlobalResidueTypeSet: {0} Total time to initialize 1.38154 seconds.
+core.import_pose.import_pose: {0} File '3OTK-closed-monomer-alpha-GlcNAc-S217C_0005_598_manually_removed.pdb' automatically determined to be of type PDB
+core.io.util: {0} Automatic glycan connection is activated.
+core.io.util: {0} Start reordering residues.
+core.io.util: {0} Corrected glycan residue order (internal numbering): [371]
+core.io.util: {0} 
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] UDP370 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Glc371 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.conformation.Conformation: {0} Found disulfide between residues 4 358
+core.conformation.Conformation: {0} current variant for 4 CYS
+core.conformation.Conformation: {0} current variant for 358 CYS
+core.conformation.Conformation: {0} current variant for 4 CYD
+core.conformation.Conformation: {0} current variant for 358 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 45 117
+core.conformation.Conformation: {0} current variant for 45 CYS
+core.conformation.Conformation: {0} current variant for 117 CYS
+core.conformation.Conformation: {0} current variant for 45 CYD
+core.conformation.Conformation: {0} current variant for 117 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 96 144
+core.conformation.Conformation: {0} current variant for 96 CYS
+core.conformation.Conformation: {0} current variant for 144 CYS
+core.conformation.Conformation: {0} current variant for 96 CYD
+core.conformation.Conformation: {0} current variant for 144 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 317 326
+core.conformation.Conformation: {0} current variant for 317 CYS
+core.conformation.Conformation: {0} current variant for 326 CYS
+core.conformation.Conformation: {0} current variant for 317 CYD
+core.conformation.Conformation: {0} current variant for 326 CYD
+core.conformation.carbohydrates.GlycanTreeSet: {0} Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: {0} Found 1 glycan trees.
+core.chemical.carbohydrates.database_io: {0} N-glycan_core N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} glycan_core N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} core N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} man3 N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} man5 man5.iupac
+core.chemical.carbohydrates.database_io: {0} man9 man9.iupac
+core.chemical.carbohydrates.database_io: {0} bisected_N-glycan_core bisected_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} bisected_fucosylated_N-glycan_core bisected_fucosylated_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} core_1_O-glycan core_1_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_2_O-glycan core_2_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_3_O-glycan core_3_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_4_O-glycan core_4_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_5_O-glycan core_5_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_6_O-glycan core_6_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_7_O-glycan core_7_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} core_8_O-glycan core_8_O-glycan.iupac
+core.chemical.carbohydrates.database_io: {0} fucosylated_N-glycan_core fucosylated_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} high-mannose_N-glycan_core high-mannose_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} hybrid_N-glycan_core hybrid_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} hybrid_bisected_N-glycan_core hybrid_bisected_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} hybrid_bisected_fucosylated_N-glycan_core hybrid_bisected_fucosylated_N-glycan_core.iupac
+core.chemical.carbohydrates.database_io: {0} hybrid_fucosylated_N-glycan_core hybrid_fucosylated_N-glycan_core.iupac
+core.pose.carbohydrates.util: {0} Delete to residue is not carbohydrate and not a branch point.  Nothing to be done.
+protocols.carbohydrates.SimpleGlycosylateMover: {0} Glycosylating at 2 : 2 b-D-Galp-(1->3)-a-D-GalpNAc
+core.conformation.Conformation: {0} appending residue by a chemical bond in the foldtree: 4 ->3)-alpha-D-Galp:2-AcNH anchor:  OG1    2 root:  C1 
+core.pose.carbohydrates.util: {0} Glycosylated pose with a(n) b-D-Galp-(1->3)-a-D-GalpNAc-OG1THR2 bond.
+core.conformation.carbohydrates.GlycanTreeSet: {0} Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: {0} Found 1 glycan trees.
+protocols.carbohydrates.GlycanSampler: {0} initializing objects 
+core.scoring.ScoreFunctionFactory: {0} SCOREFUNCTION: ref2015
+core.scoring.etable: {0} Starting energy table calculation
+core.scoring.etable: {0} smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: {0} smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: {0} smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: {0} Finished calculating energy tables.
+basic.io.database: {0} Database file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+basic.io.database: {0} Database file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+basic.io.database: {0} Database file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+basic.io.database: {0} Database file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+basic.io.database: {0} Database file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+basic.io.database: {0} Database file opened: scoring/score_functions/rama/fd/all.ramaProb
+basic.io.database: {0} Database file opened: scoring/score_functions/rama/fd/prepro.ramaProb
+basic.io.database: {0} Database file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+basic.io.database: {0} Database file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+basic.io.database: {0} Database file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+basic.io.database: {0} Database file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+basic.io.database: {0} Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: {0} Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+core.scoring.P_AA: {0} shapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+basic.io.database: {0} Database file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+core.scoring.ScoreFunctionFactory: {0} The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoringManager: {0} Creating CHI Energy Function.
+core.scoring.carbohydrates.CHIEnergyFunction: {0} Setting up chi sampling
+core.scoring.ScoringManager: {0} Creating carbohydrate omega preferences function.
+core.scoring.carbohydrates.OmegaPreferencesFunction: {0} Setting up omega preference sampling
+core.scoring.ScoreFunctionFactory: {0}  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+basic.io.database: {0} Database file opened: scoring/score_functions/elec_cp_reps.dat
+core.scoring.elec.util: {0} Read 40 countpair representative atoms
+core.pack.dunbrack.RotamerLibrary: {0} shapovalov_lib_fixes_enable option is true.
+core.pack.dunbrack.RotamerLibrary: {0} shapovalov_lib::shap_dun10_smooth_level of 1( aka lowest_smooth ) got activated.
+core.pack.dunbrack.RotamerLibrary: {0} Binary rotamer library selected: /home/souvadra/anaconda3/envs/pyrosetta_env/lib/python3.7/site-packages/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin
+core.pack.dunbrack.RotamerLibrary: {0} Using Dunbrack library binary file '/home/souvadra/anaconda3/envs/pyrosetta_env/lib/python3.7/site-packages/pyrosetta/database/rotamer/shapovalov/StpDwn_0-0-0/Dunbrack10.lib.bin'.
+core.pack.dunbrack.RotamerLibrary: {0} Dunbrack 2010 library took 0.15285 seconds to load from binary
+protocols.carbohydrates.GlycanSampler: {0} Randomizing glycan torsions 
+protocols.carbohydrates.GlycanSampler: {0} Modeling 2 glycan residues
+protocols.carbohydrates.GlycanSampler: {0} Setting up Tree-based packing.
+protocols.carbohydrates.GlycanSampler: {0} Initialized
+protocols.carbohydrates.GlycanSampler: {0} starting energy: 5813.2
+protocols.carbohydrates.GlycanSampler: {0} Total Rounds = 200 ( 2 glycans * 100 )
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 408 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+basic.thread_manager.RosettaThreadManager: {?} Creating a thread pool of 1 threads.
+basic.thread_manager.RosettaThreadPool: {?} Launched 0 new threads.
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 408 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 407 rotamers at 4 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 10
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 20
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.GlycanSampler: {0} Round: 30
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 40
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.GlycanSampler: {0} Round: 50
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanSampler: {0} Round: 60
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 70
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.GlycanSampler: {0} Round: 80
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+protocols.carbohydrates.GlycanSampler: {0} Round: 90
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.GlycanSampler: {0} Round: 100
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanSampler: {0} Round: 110
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 120
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 130
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 140
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.GlycanSampler: {0} Round: 150
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 4
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 2 residues 
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.GlycanSampler: {0} Round: 160
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanSampler: {0} Round: 170
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 180
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling beta-D-Galp-(?->3)-alpha-D-GalpNAc- linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.GlycanSampler: {0} Round: 190
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.pack_rotamers: {0} built 405 rotamers at 2 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.GlycanSampler: {0} Last mover failed.  Continueing!
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling ->3)-alpha-D-GalpNAc-(?THR linkage 
+protocols.carbohydrates.LinkageConformerMover: {0} Sampling conformer 1 which has a population of 1
+protocols.carbohydrates.LinkageConformerMover: {0} Complete
+protocols.carbohydrates.GlycanSampler: {0} Round: 200
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing from carbohydrate root: 5
+protocols.carbohydrates.GlycanTreeMinMover: {0} Minimizing 1 residues 
+protocols.carbohydrates.GlycanSampler: {0} energy start: 5813.2
+protocols.carbohydrates.GlycanSampler: {0} energy final: 234.892
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.util: {0} Shear accepts: 80/80
+protocols.carbohydrates.util: {0} min accept: 1
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.util: {0} pack accepted: 1
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.simple_moves.BackboneMover: {0} [ WARNING ] no movable positions in ShearMover!
+protocols.carbohydrates.util: {0} Shear accepts: 80/80
+protocols.carbohydrates.util: {0} min accept: 1
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 2 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 406 rotamers at 3 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.carbohydrates.util: {0} pack accepted: 1
+protocols.carbohydrates.GlycanSampler: {0} energy final post min: 234.892
+protocols.carbohydrates.GlycanSampler: {0} energy recov post min: 234.892
+protocols.moves.TrialCounter: {0}              unk trials=    341;  accepts= 0.7243;  energy_drop/trial= -16.35850
+core.import_pose.import_pose: {0} File 'renumbered_file.pdb' automatically determined to be of type PDB
+core.io.util: {0} Automatic glycan connection is activated.
+core.io.util: {0} Start reordering residues.
+core.io.util: {0} Corrected glycan residue order (internal numbering): [4, 5]
+core.io.util: {0} 
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Gal4 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Gal5 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.chemical.AtomICoor: {0} [ WARNING ] IcoorAtomID::atom_id(): Cannot get atom_id for POLYMER_LOWER of residue ->3)-alpha-D-Galp:2-AcNH 4.  Returning BOGUS ID instead.
+core.conformation.carbohydrates.GlycanTreeSet: {0} Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: {0} Found 1 glycan trees.
+core.scoring.CartesianBondedEnergy: {0} Initializing IdealParametersDatabase with default Ks=300 , 80 , 80 , 10 , 80
+basic.io.database: {0} Database file opened: scoring/score_functions/bondlength_bondangle/default-lengths.txt
+core.scoring.CartesianBondedEnergy: {0} Read 759 bb-independent lengths.
+basic.io.database: {0} Database file opened: scoring/score_functions/bondlength_bondangle/default-angles.txt
+core.scoring.CartesianBondedEnergy: {0} Read 1434 bb-independent angles.
+basic.io.database: {0} Database file opened: scoring/score_functions/bondlength_bondangle/default-torsions.txt
+core.scoring.CartesianBondedEnergy: {0} Read 1 bb-independent torsions.
+basic.io.database: {0} Database file opened: scoring/score_functions/bondlength_bondangle/default-improper.txt
+core.scoring.CartesianBondedEnergy: {0} Read 529 bb-independent improper tors.
+core.scoring.CartesianBondedEnergy: {0} Creating new peptide-bonded energy container (371)
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP:  O5', PA ,1OPA,3OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP:  O5', PA ,1OPA,2OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PA ,1OPA,2OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP:  O5', PA ,2OPA,3OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP:  O5', PA ,2OPA,1OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PA ,2OPA,1OPA to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PB ,1OPB,3OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PB ,1OPB,2OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPB, PB ,1OPB,2OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PB ,2OPB,3OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPA, PB ,2OPB,1OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined torsion UDP: 3OPB, PB ,2OPB,1OPB to DB with mu0 = 0, K = 80, period = 2
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C1',O4' to DB with theta0 = 1.88003 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C1',VO4' to DB with theta0 = 1.88007 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C1',N1 to DB with theta0 = 1.95988 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C1',H1' to DB with theta0 = 1.90614 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O4',C1',VO4' to DB with theta0 = 0.000122069 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O4',C1',N1 to DB with theta0 = 1.90566 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O4',C1',H1' to DB with theta0 = 1.90295 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: VO4',C1',N1 to DB with theta0 = 1.90573 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: VO4',C1',H1' to DB with theta0 = 1.90283 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N1,C1',H1' to DB with theta0 = 1.90833 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',C2',C3' to DB with theta0 = 1.77397 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',C2',O2' to DB with theta0 = 1.90096 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',C2',H2' to DB with theta0 = 1.94457 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',C2',O2' to DB with theta0 = 1.9414 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',C2',H2' to DB with theta0 = 1.94627 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O2',C2',H2' to DB with theta0 = 1.94919 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C3',C4' to DB with theta0 = 1.79053 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C3',O3' to DB with theta0 = 1.98365 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',C3',H3' to DB with theta0 = 1.90208 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',C3',O3' to DB with theta0 = 1.97258 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',C3',H3' to DB with theta0 = 1.90628 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O3',C3',H3' to DB with theta0 = 1.90475 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',C4',C5' to DB with theta0 = 2.02744 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',C4',O4' to DB with theta0 = 1.8156 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',C4',H4' to DB with theta0 = 1.8995 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C5',C4',O4' to DB with theta0 = 1.91881 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C5',C4',H4' to DB with theta0 = 1.89907 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O4',C4',H4' to DB with theta0 = 1.89918 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',C5',O5' to DB with theta0 = 1.9488 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',C5',1H5' to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',C5',2H5' to DB with theta0 = 1.90231 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O5',C5',1H5' to DB with theta0 = 1.90267 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O5',C5',2H5' to DB with theta0 = 1.90359 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 1H5',C5',2H5' to DB with theta0 = 1.90362 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C5',O5',PA to DB with theta0 = 2.11073 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O5',PA,3OPA to DB with theta0 = 1.84132 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O5',PA,1OPA to DB with theta0 = 1.88554 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O5',PA,2OPA to DB with theta0 = 1.88577 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPA,PA,1OPA to DB with theta0 = 1.95572 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPA,PA,2OPA to DB with theta0 = 1.9555 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 1OPA,PA,2OPA to DB with theta0 = 1.9349 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: PA,3OPA,PB to DB with theta0 = 2.14925 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPA,PB,3OPB to DB with theta0 = 1.91986 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPA,PB,1OPB to DB with theta0 = 1.90675 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPA,PB,2OPB to DB with theta0 = 1.90675 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPB,PB,1OPB to DB with theta0 = 1.9101 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 3OPB,PB,2OPB to DB with theta0 = 1.9101 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: 1OPB,PB,2OPB to DB with theta0 = 1.91021 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',O4',C4' to DB with theta0 = 1.91865 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',O4',VC1' to DB with theta0 = 0.000128928 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4',O4',VC1' to DB with theta0 = 1.91859 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',N1,C2 to DB with theta0 = 2.04443 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C1',N1,C6 to DB with theta0 = 2.13542 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2,N1,C6 to DB with theta0 = 2.10334 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N1,C2,O2 to DB with theta0 = 2.14878 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N1,C2,N3 to DB with theta0 = 2.00879 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O2,C2,N3 to DB with theta0 = 2.12561 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2,N3,C4 to DB with theta0 = 2.21856 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2,N3,H3 to DB with theta0 = 2.03204 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4,N3,H3 to DB with theta0 = 2.03259 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N3,C4,O4 to DB with theta0 = 2.08382 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N3,C4,C5 to DB with theta0 = 2.00175 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: O4,C4,C5 to DB with theta0 = 2.19761 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4,C5,C6 to DB with theta0 = 2.08469 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C4,C5,H5 to DB with theta0 = 2.0983 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C6,C5,H5 to DB with theta0 = 2.10019 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N1,C6,C5 to DB with theta0 = 2.14923 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: N1,C6,H6 to DB with theta0 = 2.07658 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C5,C6,H6 to DB with theta0 = 2.05738 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C2',O2',HO2' to DB with theta0 = 1.90245 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: C3',O3',HO3' to DB with theta0 = 1.90245 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C1',C2', to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C1',O4', to DB with d0 = 1.41229 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C1',VO4', to DB with d0 = 1.412 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C1',N1, to DB with d0 = 1.48301 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C1',H1', to DB with d0 = 0.980531 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C2',C3', to DB with d0 = 1.523 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C2',O2', to DB with d0 = 1.42056 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C2',H2', to DB with d0 = 0.97975 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C3',C4', to DB with d0 = 1.52 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C3',O3', to DB with d0 = 1.41635 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C3',H3', to DB with d0 = 0.979621 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C4',C5', to DB with d0 = 1.509 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C4',O4', to DB with d0 = 1.45162 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C4',H4', to DB with d0 = 0.97953 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C5',O5', to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C5',1H5', to DB with d0 = 0.980078 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C5',2H5', to DB with d0 = 0.97972 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: O5',PA, to DB with d0 = 1.605 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PA,3OPA, to DB with d0 = 1.616 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PA,1OPA, to DB with d0 = 1.48522 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PA,2OPA, to DB with d0 = 1.48453 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: 3OPA,PB, to DB with d0 = 1.617 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PB,3OPB, to DB with d0 = 1.482 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PB,1OPB, to DB with d0 = 1.483 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: PB,2OPB, to DB with d0 = 1.483 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: O4',VC1', to DB with d0 = 1.412 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: N1,C2, to DB with d0 = 1.3827 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: N1,C6, to DB with d0 = 1.37885 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C2,O2, to DB with d0 = 1.21866 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C2,N3, to DB with d0 = 1.37331 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: N3,C4, to DB with d0 = 1.37866 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: N3,H3, to DB with d0 = 0.979691 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C4,O4, to DB with d0 = 1.23196 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C4,C5, to DB with d0 = 1.43123 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C5,C6, to DB with d0 = 1.33692 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C5,H5, to DB with d0 = 0.980186 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: C6,H6, to DB with d0 = 0.979067 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: O2',HO2', to DB with d0 = 0.980453 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length UDP: O3',HO3', to DB with d0 = 0.980453 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: PB,3OPB,N to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,O5 to DB with theta0 = 1.90983 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,VO5 to DB with theta0 = 1.91986 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,O1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,H1 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C1,VO5 to DB with theta0 = 0.0143051 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C1,O1 to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C1,H1 to DB with theta0 = 1.92394 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: VO5,C1,O1 to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: VO5,C1,H1 to DB with theta0 = 1.91005 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O1,C1,H1 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,C2,C3 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,C2,O2 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,C2,N2 to DB with theta0 = 1.90185 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,C2,H2 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C2,O2 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C2,N2 to DB with theta0 = 1.90484 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C2,H2 to DB with theta0 = 1.91879 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O2,C2,N2 to DB with theta0 = 0.0187254 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O2,C2,H2 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: N2,C2,H2 to DB with theta0 = 1.93321 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C3,C4 to DB with theta0 = 1.87623 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C3,O3 to DB with theta0 = 1.91986 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C3,H3 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,C3,O3 to DB with theta0 = 1.9233 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,C3,H3 to DB with theta0 = 1.93155 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O3,C3,H3 to DB with theta0 = 1.91017 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C4,O4 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C4,C5 to DB with theta0 = 1.88496 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,C4,H4 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O4,C4,C5 to DB with theta0 = 1.92314 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O4,C4,H4 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C5,C4,H4 to DB with theta0 = 1.92732 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,O4,HO4 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,C5,O5 to DB with theta0 = 1.92859 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,C5,C6 to DB with theta0 = 1.92859 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C4,C5,H5 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C5,C6 to DB with theta0 = 1.89234 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C5,H5 to DB with theta0 = 1.90583 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C6,C5,H5 to DB with theta0 = 1.90583 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,O5,C5 to DB with theta0 = 1.96249 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,O5,VC1 to DB with theta0 = 0.0217746 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C5,O5,VC1 to DB with theta0 = 1.94604 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C1,O1,HO1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,O2,HO2 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C3,O3,HO3 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C5,C6,O6 to DB with theta0 = 1.93732 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C5,C6,1H6 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C5,C6,2H6 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O6,C6,1H6 to DB with theta0 = 1.90148 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O6,C6,2H6 to DB with theta0 = 1.90148 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: 1H6,C6,2H6 to DB with theta0 = 1.91879 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C6,O6,HO6 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,N2,CN2 to DB with theta0 = 2.04664 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,N2,HN2 to DB with theta0 = 2.11421 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: CN2,N2,HN2 to DB with theta0 = 2.12232 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: N2,CN2,CAN2 to DB with theta0 = 2.1126 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: N2,CN2,OCN2 to DB with theta0 = 2.069 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: CAN2,CN2,OCN2 to DB with theta0 = 2.10143 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: CN2,CAN2,1HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: CN2,CAN2,2HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: CN2,CAN2,3HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: 1HC2,CAN2,2HC2 to DB with theta0 = 1.87065 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: 1HC2,CAN2,3HC2 to DB with theta0 = 1.968 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: 2HC2,CAN2,3HC2 to DB with theta0 = 1.88966 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,C2, to DB with d0 = 1.55 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,O5, to DB with d0 = 1.42846 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,VO5, to DB with d0 = 1.44 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,O1, to DB with d0 = 1.48 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,H1, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C2,C3, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C2,O2, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C2,N2, to DB with d0 = 1.45 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C2,H2, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C3,C4, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C3,O3, to DB with d0 = 1.43 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C3,H3, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C4,O4, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C4,C5, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C4,H4, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O4,HO4, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C5,O5, to DB with d0 = 1.45 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C5,C6, to DB with d0 = 1.51 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C5,H5, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O5,VC1, to DB with d0 = 1.44 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O1,HO1, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O2,HO2, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O3,HO3, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C6,O6, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C6,1H6, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C6,2H6, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: O6,HO6, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: N2,CN2, to DB with d0 = 1.312 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: N2,HN2, to DB with d0 = 0.99 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: CN2,CAN2, to DB with d0 = 1.496 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: CN2,OCN2, to DB with d0 = 1.234 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: CAN2,1HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: CAN2,2HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: CAN2,3HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,C to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C1,C to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: VO5,C1,C to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O1,C1,C to DB with theta0 = 2.10734e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: H1,C1,C to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle UDP: PB,3OPB,C1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: C2,C1,3OPB to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O5,C1,3OPB to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: VO5,C1,3OPB to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: O1,C1,3OPB to DB with theta0 = 2.10734e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Glc: H1,C1,3OPB to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Glc: C1,3OPB, to DB with d0 = 1.48 , Kd = 300
+core.conformation.carbohydrates.GlycanTreeSet: {0} Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: {0} Found 2 glycan trees.
+core.scoring.constraints.util: {0} Constraint choice: 3OTK_constraints_file_STP.cst
+core.scoring.constraints.ConstraintsIO: {0} read constraints from 3OTK_constraints_file_STP.cst
+core.scoring.constraints.ConstraintsIO: {0} Read in 10 constraints
+core.scoring.CartesianBondedEnergy: {0} Creating new peptide-bonded energy container (376)
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,O5 to DB with theta0 = 1.90983 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,VO5 to DB with theta0 = 1.91986 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,O1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,H1 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,VO5 to DB with theta0 = 0.0143051 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,O1 to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,H1 to DB with theta0 = 1.92394 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: VO5,C1,O1 to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: VO5,C1,H1 to DB with theta0 = 1.91005 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O1,C1,H1 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,C2,C3 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,C2,O2 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,C2,N2 to DB with theta0 = 1.90185 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,C2,H2 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C2,O2 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C2,N2 to DB with theta0 = 1.90484 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C2,H2 to DB with theta0 = 1.91879 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O2,C2,N2 to DB with theta0 = 0.0187254 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O2,C2,H2 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: N2,C2,H2 to DB with theta0 = 1.93321 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C3,O3 to DB with theta0 = 1.91986 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C3,C4 to DB with theta0 = 1.87623 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C3,H3 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O3,C3,C4 to DB with theta0 = 1.9233 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O3,C3,H3 to DB with theta0 = 1.91017 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,C3,H3 to DB with theta0 = 1.93155 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,O3,HO3 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C4,C5 to DB with theta0 = 1.88496 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C4,O4 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,C4,H4 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,C4,O4 to DB with theta0 = 1.92314 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,C4,H4 to DB with theta0 = 1.92732 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O4,C4,H4 to DB with theta0 = 1.91449 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,C5,O5 to DB with theta0 = 1.92859 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,C5,C6 to DB with theta0 = 1.92859 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,C5,H5 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C5,C6 to DB with theta0 = 1.89234 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C5,H5 to DB with theta0 = 1.90583 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C6,C5,H5 to DB with theta0 = 1.90583 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,O5,C5 to DB with theta0 = 1.96249 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,O5,VC1 to DB with theta0 = 0.0217746 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,O5,VC1 to DB with theta0 = 1.94604 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C1,O1,HO1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,O2,HO2 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,O4,HO4 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,C6,O6 to DB with theta0 = 1.93732 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,C6,1H6 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C5,C6,2H6 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O6,C6,1H6 to DB with theta0 = 1.90148 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O6,C6,2H6 to DB with theta0 = 1.90148 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: 1H6,C6,2H6 to DB with theta0 = 1.91879 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C6,O6,HO6 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,N2,CN2 to DB with theta0 = 2.04664 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,N2,HN2 to DB with theta0 = 2.11421 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: CN2,N2,HN2 to DB with theta0 = 2.12232 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: N2,CN2,CAN2 to DB with theta0 = 2.1126 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: N2,CN2,OCN2 to DB with theta0 = 2.069 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: CAN2,CN2,OCN2 to DB with theta0 = 2.10143 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: CN2,CAN2,1HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: CN2,CAN2,2HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: CN2,CAN2,3HC2 to DB with theta0 = 1.9115 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: 1HC2,CAN2,2HC2 to DB with theta0 = 1.87065 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: 1HC2,CAN2,3HC2 to DB with theta0 = 1.968 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: 2HC2,CAN2,3HC2 to DB with theta0 = 1.88966 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,C2, to DB with d0 = 1.55 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,O5, to DB with d0 = 1.42846 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,VO5, to DB with d0 = 1.44 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,O1, to DB with d0 = 1.48 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,H1, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C2,C3, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C2,O2, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C2,N2, to DB with d0 = 1.45 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C2,H2, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C3,O3, to DB with d0 = 1.43 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C3,C4, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C3,H3, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O3,HO3, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C4,C5, to DB with d0 = 1.53 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C4,O4, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C4,H4, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C5,O5, to DB with d0 = 1.45 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C5,C6, to DB with d0 = 1.51 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C5,H5, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O5,VC1, to DB with d0 = 1.44 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O1,HO1, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O2,HO2, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O4,HO4, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C6,O6, to DB with d0 = 1.42 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C6,1H6, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C6,2H6, to DB with d0 = 1.1 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: O6,HO6, to DB with d0 = 0.98 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: N2,CN2, to DB with d0 = 1.312 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: N2,HN2, to DB with d0 = 0.99 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: CN2,CAN2, to DB with d0 = 1.496 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: CN2,OCN2, to DB with d0 = 1.234 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: CAN2,1HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: CAN2,2HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: CAN2,3HC2, to DB with d0 = 1.099 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,O3,N to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: HO3,O3,N to DB with theta0 = 1.49012e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,C to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,C to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: VO5,C1,C to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O1,C1,C to DB with theta0 = 2.10734e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: H1,C1,C to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle THR: CB,OG1,C1 to DB with theta0 = 1.94824 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle THR: HG1,OG1,C1 to DB with theta0 = 1.38566 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,OG1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,OG1 to DB with theta0 = 1.90192 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: VO5,C1,OG1 to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O1,C1,OG1 to DB with theta0 = 2.10734e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: H1,C1,OG1 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,OG1, to DB with d0 = 1.48 , Kd = 300
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C4,C3,O3 to DB with theta0 = 1.9233 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O4,C4,C5 to DB with theta0 = 1.92314 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C3,O3,C1 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: HO3,O3,C1 to DB with theta0 = 1.49012e-08 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: C2,C1,O3 to DB with theta0 = 1.91114 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O5,C1,O3 to DB with theta0 = 1.91962 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: VO5,C1,O3 to DB with theta0 = 1.90575 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: O1,C1,O3 to DB with theta0 = 0 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined angle Gal: H1,C1,O3 to DB with theta0 = 1.90241 , Ktheta = 80
+core.scoring.CartesianBondedEnergy: {0} Adding undefined length Gal: C1,O3, to DB with d0 = 1.48 , Kd = 300
+core.scoring.ScoreFunction: {0} 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -2343.246   -2343.246
+ fa_rep                       0.550     524.297     288.364
+ fa_sol                       1.000    1413.363    1413.363
+ fa_intra_rep                 0.005     917.989       4.590
+ fa_intra_sol_xover4          1.000      84.712      84.712
+ lk_ball_wtd                  1.000     -68.033     -68.033
+ fa_elec                      1.000    -669.609    -669.609
+ hbond_sr_bb                  1.000    -140.001    -140.001
+ hbond_lr_bb                  1.000     -63.569     -63.569
+ hbond_bb_sc                  1.000     -86.170     -86.170
+ hbond_sc                     1.000     -67.866     -67.866
+ dslf_fa13                    1.250      -3.588      -4.485
+ atom_pair_constraint         1.000   190602.756   190602.756
+ omega                        0.400      84.126      33.651
+ fa_dun                       0.700     684.794     479.356
+ p_aa_pp                      0.600    -120.994     -72.596
+ yhh_planarity                0.625       0.534       0.334
+ ref                          1.000     117.190     117.190
+ rama_prepro                  0.450     -72.490     -32.621
+ cart_bonded                  0.500    1251.939     625.969
+---------------------------------------------------
+ Total weighted score:                    190102.094
+core.import_pose.import_pose: {0} File '3OTK-closed-monomer-alpha-GlcNAc_2GAM-GalBGalNAc.pdb' automatically determined to be of type PDB
+core.io.util: {0} Automatic glycan connection is activated.
+core.io.util: {0} Start reordering residues.
+core.io.util: {0} Corrected glycan residue order (internal numbering): [371, 372, 373]
+core.io.util: {0} 
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} Setting chain termination for 371
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] UDP370 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Glc371 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Gal372 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.io.pose_from_sfr.PoseFromSFRBuilder: {0} [ WARNING ] Gal373 has an unfavorable ring conformation; the coordinates for this input structure may have been poorly assigned.
+core.conformation.Conformation: {0} Found disulfide between residues 4 358
+core.conformation.Conformation: {0} current variant for 4 CYS
+core.conformation.Conformation: {0} current variant for 358 CYS
+core.conformation.Conformation: {0} current variant for 4 CYD
+core.conformation.Conformation: {0} current variant for 358 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 45 117
+core.conformation.Conformation: {0} current variant for 45 CYS
+core.conformation.Conformation: {0} current variant for 117 CYS
+core.conformation.Conformation: {0} current variant for 45 CYD
+core.conformation.Conformation: {0} current variant for 117 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 96 144
+core.conformation.Conformation: {0} current variant for 96 CYS
+core.conformation.Conformation: {0} current variant for 144 CYS
+core.conformation.Conformation: {0} current variant for 96 CYD
+core.conformation.Conformation: {0} current variant for 144 CYD
+core.conformation.Conformation: {0} Found disulfide between residues 317 326
+core.conformation.Conformation: {0} current variant for 317 CYS
+core.conformation.Conformation: {0} current variant for 326 CYS
+core.conformation.Conformation: {0} current variant for 317 CYD
+core.conformation.Conformation: {0} current variant for 326 CYD
+core.conformation.carbohydrates.GlycanTreeSet: {0} Setting up Glycan Trees
+core.conformation.carbohydrates.GlycanTreeSet: {0} Found 2 glycan trees.
+core.scoring.ScoreFunction: {0} 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -2352.907   -2352.907
+ fa_rep                       0.550     582.916     320.604
+ fa_sol                       1.000    1423.851    1423.851
+ fa_intra_rep                 0.005     917.989       4.590
+ fa_intra_sol_xover4          1.000      84.712      84.712
+ lk_ball_wtd                  1.000     -68.068     -68.068
+ fa_elec                      1.000    -669.456    -669.456
+ hbond_sr_bb                  1.000    -140.001    -140.001
+ hbond_lr_bb                  1.000     -63.569     -63.569
+ hbond_bb_sc                  1.000     -86.170     -86.170
+ hbond_sc                     1.000     -67.866     -67.866
+ dslf_fa13                    1.250      -3.588      -4.485
+ atom_pair_constraint         1.000     663.178     663.178
+ omega                        0.400      84.126      33.651
+ fa_dun                       0.700     684.794     479.356
+ p_aa_pp                      0.600    -120.994     -72.596
+ yhh_planarity                0.625       0.534       0.334
+ ref                          1.000     117.190     117.190
+ rama_prepro                  0.450     -72.490     -32.621
+ cart_bonded                  0.500    1251.939     625.969
+---------------------------------------------------
+ Total weighted score:                      195.697
+core.scoring.ScoreFunction: {0} 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -2364.148   -2364.148
+ fa_rep                       0.550     647.217     355.969
+ fa_sol                       1.000    1436.812    1436.812
+ fa_intra_rep                 0.005     917.989       4.590
+ fa_intra_sol_xover4          1.000      84.712      84.712
+ lk_ball_wtd                  1.000     -68.143     -68.143
+ fa_elec                      1.000    -669.108    -669.108
+ hbond_sr_bb                  1.000    -140.001    -140.001
+ hbond_lr_bb                  1.000     -63.569     -63.569
+ hbond_bb_sc                  1.000     -86.170     -86.170
+ hbond_sc                     1.000     -67.866     -67.866
+ dslf_fa13                    1.250      -3.588      -4.485
+ atom_pair_constraint         1.000     302.785     302.785
+ omega                        0.400      84.126      33.651
+ fa_dun                       0.700     684.794     479.356
+ p_aa_pp                      0.600    -120.994     -72.596
+ yhh_planarity                0.625       0.534       0.334
+ ref                          1.000     117.190     117.190
+ rama_prepro                  0.450     -72.490     -32.621
+ cart_bonded                  0.500    1251.939     625.969
+---------------------------------------------------
+ Total weighted score:                     -127.338
+core.pack.task: {0} Packer task: initialize from command line() 
+protocols.relax.RelaxScriptManager: {0} Reading relax scripts list from database.
+core.scoring.ScoreFunctionFactory: {0} SCOREFUNCTION: ref2015
+core.scoring.ScoreFunctionFactory: {0} The -include_sugars flag was used with no sugar_bb weight set in the weights file.  Setting sugar_bb weight to 1.0 by default.
+core.scoring.ScoreFunctionFactory: {0}  The -include_sugars flag was used without fa_intra_rep_xover4 term in the scorefunction
+. Turning this on. It is generally recommended to use the -beta scorefunction (Rosetta-ICO) with sugars, which includes this and other desired terms such as those bridging waters
+protocols.relax.RelaxScriptManager: {0} Looking for MonomerRelax2019.txt
+protocols.relax.RelaxScriptManager: {0} ================== Reading script file: /home/souvadra/anaconda3/envs/pyrosetta_env/lib/python3.7/site-packages/pyrosetta/database/sampling/relax_scripts/MonomerRelax2019.txt ==================
+protocols.relax.RelaxScriptManager: {0} repeat %%nrepeats%%
+protocols.relax.RelaxScriptManager: {0} coord_cst_weight 1.0
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.040
+protocols.relax.RelaxScriptManager: {0} repack
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.051
+protocols.relax.RelaxScriptManager: {0} min 0.01
+protocols.relax.RelaxScriptManager: {0} coord_cst_weight 0.5
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.265
+protocols.relax.RelaxScriptManager: {0} repack
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.280
+protocols.relax.RelaxScriptManager: {0} min 0.01
+protocols.relax.RelaxScriptManager: {0} coord_cst_weight 0.0
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.559
+protocols.relax.RelaxScriptManager: {0} repack
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 0.581
+protocols.relax.RelaxScriptManager: {0} min 0.01
+protocols.relax.RelaxScriptManager: {0} coord_cst_weight 0.0
+protocols.relax.RelaxScriptManager: {0} scale:fa_rep 1
+protocols.relax.RelaxScriptManager: {0} repack
+protocols.relax.RelaxScriptManager: {0} min 0.00001
+protocols.relax.RelaxScriptManager: {0} accept_to_best
+protocols.relax.RelaxScriptManager: {0} endrepeat
+protocols.relax.FastRelax: {0} CMD: repeat  -127.339  0  0  0.55
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -127.339  0  0  0.55
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -469.069  0  0  0.022
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 465 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -500.073  0  0  0.022
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -496.496  0  0  0.02805
+protocols.relax.FastRelax: {0} CMD: min  -797.963  0.0548309  0.0548309  0.02805
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -797.963  0.0548309  0.0548309  0.02805
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -710.399  0.0548309  0.0548309  0.14575
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 465 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -724.352  0.0548309  0.0548309  0.14575
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -718.202  0.0548309  0.0548309  0.154
+protocols.relax.FastRelax: {0} CMD: min  -737.637  0.0463824  0.0463824  0.154
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -737.637  0.0463824  0.0463824  0.154
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -642.293  0.0463824  0.0463824  0.30745
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 465 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -642.317  0.0463824  0.0463824  0.30745
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -634.799  0.0463824  0.0463824  0.31955
+protocols.relax.FastRelax: {0} CMD: min  -634.849  0.046393  0.046393  0.31955
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -634.849  0.046393  0.046393  0.31955
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -491.73  0.046393  0.046393  0.55
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 465 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -491.73  0.046393  0.046393  0.55
+protocols.relax.FastRelax: {0} CMD: min  -540.051  0.155384  0.155384  0.55
+protocols.relax.FastRelax: {0} MRP: 0  -540.051  -540.051  0.155384  0.155384  
+protocols.relax.FastRelax: {0} CMD: accept_to_best  -540.051  0.155384  0.155384  0.55
+protocols.relax.FastRelax: {0} CMD: endrepeat  -540.051  0.155384  0.155384  0.55
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -540.051  0.155384  0.155384  0.55
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -805.197  0.155384  0.155384  0.022
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -805.443  0.155384  0.155384  0.022
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -802.404  0.155384  0.155384  0.02805
+protocols.relax.FastRelax: {0} CMD: min  -812.416  0.16151  0.16151  0.02805
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -812.416  0.16151  0.16151  0.02805
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -717.239  0.16151  0.16151  0.14575
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -722.849  0.16151  0.16151  0.14575
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -716.501  0.16151  0.16151  0.154
+protocols.relax.FastRelax: {0} CMD: min  -749.433  0.155254  0.155254  0.154
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -749.433  0.155254  0.155254  0.154
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -663.809  0.155254  0.155254  0.30745
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -663.834  0.155254  0.155254  0.30745
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -657.084  0.155254  0.155254  0.31955
+protocols.relax.FastRelax: {0} CMD: min  -658.779  0.154595  0.154595  0.31955
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -658.779  0.154595  0.154595  0.31955
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -534.096  0.154595  0.154595  0.55
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 447 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -534.096  0.154595  0.154595  0.55
+protocols.relax.FastRelax: {0} CMD: min  -540.297  0.156105  0.156105  0.55
+protocols.relax.FastRelax: {0} MRP: 1  -540.297  -540.297  0.156105  0.156105  
+protocols.relax.FastRelax: {0} CMD: accept_to_best  -540.297  0.156105  0.156105  0.55
+protocols.relax.FastRelax: {0} CMD: endrepeat  -540.297  0.156105  0.156105  0.55
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -540.297  0.156105  0.156105  0.55
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -805.074  0.156105  0.156105  0.022
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -805.242  0.156105  0.156105  0.022
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -802.199  0.156105  0.156105  0.02805
+protocols.relax.FastRelax: {0} CMD: min  -809.281  0.161549  0.161549  0.02805
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -809.281  0.161549  0.161549  0.02805
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -695.797  0.161549  0.161549  0.14575
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -712.743  0.161549  0.161549  0.14575
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -705.762  0.161549  0.161549  0.154
+protocols.relax.FastRelax: {0} CMD: min  -750.023  0.154863  0.154863  0.154
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -750.023  0.154863  0.154863  0.154
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -664.598  0.154863  0.154863  0.30745
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -664.598  0.154863  0.154863  0.30745
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -657.862  0.154863  0.154863  0.31955
+protocols.relax.FastRelax: {0} CMD: min  -657.883  0.154848  0.154848  0.31955
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -657.883  0.154848  0.154848  0.31955
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -529.635  0.154848  0.154848  0.55
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 447 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -529.635  0.154848  0.154848  0.55
+protocols.relax.FastRelax: {0} CMD: min  -540.195  0.15639  0.15639  0.55
+protocols.relax.FastRelax: {0} MRP: 2  -540.195  -540.297  0.156105  0.156105  
+protocols.relax.FastRelax: {0} CMD: accept_to_best  -540.195  0.15639  0.15639  0.55
+protocols.relax.FastRelax: {0} CMD: endrepeat  -540.195  0.15639  0.15639  0.55
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -540.195  0.15639  0.15639  0.55
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -804.813  0.15639  0.15639  0.022
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -805.204  0.15639  0.15639  0.022
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -802.164  0.15639  0.15639  0.02805
+protocols.relax.FastRelax: {0} CMD: min  -808.642  0.162102  0.162102  0.02805
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -808.642  0.162102  0.162102  0.02805
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -692.293  0.162102  0.162102  0.14575
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -710.749  0.162102  0.162102  0.14575
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -703.652  0.162102  0.162102  0.154
+protocols.relax.FastRelax: {0} CMD: min  -750.02  0.155237  0.155237  0.154
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -750.02  0.155237  0.155237  0.154
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -664.646  0.155237  0.155237  0.30745
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -664.646  0.155237  0.155237  0.30745
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -657.914  0.155237  0.155237  0.31955
+protocols.relax.FastRelax: {0} CMD: min  -657.937  0.155219  0.155219  0.31955
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -657.937  0.155219  0.155219  0.31955
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -529.77  0.155219  0.155219  0.55
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 447 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -529.77  0.155219  0.155219  0.55
+protocols.relax.FastRelax: {0} CMD: min  -540.191  0.156005  0.156005  0.55
+protocols.relax.FastRelax: {0} MRP: 3  -540.191  -540.297  0.156105  0.156105  
+protocols.relax.FastRelax: {0} CMD: accept_to_best  -540.191  0.156005  0.156005  0.55
+protocols.relax.FastRelax: {0} CMD: endrepeat  -540.191  0.156005  0.156005  0.55
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -540.191  0.156005  0.156005  0.55
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -805.107  0.156005  0.156005  0.022
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -805.53  0.156005  0.156005  0.022
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -802.486  0.156005  0.156005  0.02805
+protocols.relax.FastRelax: {0} CMD: min  -808.809  0.161681  0.161681  0.02805
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -808.809  0.161681  0.161681  0.02805
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -691.412  0.161681  0.161681  0.14575
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -709.763  0.161681  0.161681  0.14575
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -702.586  0.161681  0.161681  0.154
+protocols.relax.FastRelax: {0} CMD: min  -750.207  0.154905  0.154905  0.154
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -750.207  0.154905  0.154905  0.154
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -664.748  0.154905  0.154905  0.30745
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 448 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -664.748  0.154905  0.154905  0.30745
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -658.009  0.154905  0.154905  0.31955
+protocols.relax.FastRelax: {0} CMD: min  -658.032  0.154888  0.154888  0.31955
+protocols.relax.FastRelax: {0} CMD: coord_cst_weight  -658.032  0.154888  0.154888  0.31955
+protocols.relax.FastRelax: {0} CMD: scale:fa_rep  -529.734  0.154888  0.154888  0.55
+core.pack.task: {0} Packer task: initialize from command line() 
+core.pack.rotamer_set.RotamerSet_: {0} [ WARNING ] including current in order to get at least 1 rotamer !!!!!! 373 THR:O-conjugated
+core.pack.pack_rotamers: {0} built 447 rotamers at 5 positions.
+core.pack.pack_rotamers: {0} Requesting all available threads for interaction graph computation.
+core.pack.interaction_graph.interaction_graph_factory: {0} Instantiating DensePDInteractionGraph
+core.pack.rotamer_set.RotamerSets: {0} Completed interaction graph pre-calculation in 1 available threads (1 had been requested).
+protocols.relax.FastRelax: {0} CMD: repack  -529.734  0.154888  0.154888  0.55
+protocols.relax.FastRelax: {0} CMD: min  -540.194  0.156026  0.156026  0.55
+protocols.relax.FastRelax: {0} MRP: 4  -540.194  -540.297  0.156105  0.156105  
+protocols.relax.FastRelax: {0} CMD: accept_to_best  -540.194  0.156026  0.156026  0.55
+protocols.relax.FastRelax: {0} CMD: endrepeat  -540.194  0.156026  0.156026  0.55
+protocols::checkpoint: {0} Deleting checkpoints of FastRelax
+core.scoring.ScoreFunction: {0} 
+-------------------------------------------------------PyRosetta-4 2020 [Rosetta PyRosetta4.conda.linux.cxx11thread.serialization.CentOS.python37.Release 2020.40+release.f01fa77e7385c2c0bdac6e346b24a6d8d900e7c7 2020-10-02T11:47:11] retrieved from: http://www.pyrosetta.org
+(C) Copyright Rosetta Commons Member Institutions. Created in JHU by Sergey Lyskov and PyRosetta Team.
+None
+FOLD_TREE  EDGE 1 369 -1  EDGE 1 370 1  EDGE 370 371 -1  EDGE 369 372 2  EDGE 372 374 -1  EDGE 373 375 -2  OG1  C1   EDGE 375 376 -1 
+FOLD_TREE  EDGE 325 1 -1  EDGE 325 369 -1  EDGE 325 373 1  EDGE 325 370 2  EDGE 373 372 -1  EDGE 373 374 -1  EDGE 370 371 -1  EDGE 373 375 -2    EDGE 375 376 -1 
+Decoy Number: 0
+Iternation count exceeded !!
+Iternation count exceeded !!
+#Packer_Task
+
+Threads to request: ALL AVAILABLE
+
+resid	pack?	design?	allowed_aas
+1	FALSE	FALSE	
+2	FALSE	FALSE	
+3	FALSE	FALSE	
+4	FALSE	FALSE	
+5	FALSE	FALSE	
+6	FALSE	FALSE	
+7	FALSE	FALSE	
+8	FALSE	FALSE	
+9	FALSE	FALSE	
+10	FALSE	FALSE	
+11	FALSE	FALSE	
+12	FALSE	FALSE	
+13	FALSE	FALSE	
+14	FALSE	FALSE	
+15	FALSE	FALSE	
+16	FALSE	FALSE	
+17	FALSE	FALSE	
+18	FALSE	FALSE	
+19	FALSE	FALSE	
+20	FALSE	FALSE	
+21	FALSE	FALSE	
+22	FALSE	FALSE	
+23	FALSE	FALSE	
+24	FALSE	FALSE	
+25	FALSE	FALSE	
+26	FALSE	FALSE	
+27	FALSE	FALSE	
+28	FALSE	FALSE	
+29	FALSE	FALSE	
+30	FALSE	FALSE	
+31	FALSE	FALSE	
+32	FALSE	FALSE	
+33	FALSE	FALSE	
+34	FALSE	FALSE	
+35	FALSE	FALSE	
+36	FALSE	FALSE	
+37	FALSE	FALSE	
+38	FALSE	FALSE	
+39	FALSE	FALSE	
+40	FALSE	FALSE	
+41	FALSE	FALSE	
+42	FALSE	FALSE	
+43	FALSE	FALSE	
+44	FALSE	FALSE	
+45	FALSE	FALSE	
+46	FALSE	FALSE	
+47	FALSE	FALSE	
+48	FALSE	FALSE	
+49	FALSE	FALSE	
+50	FALSE	FALSE	
+51	FALSE	FALSE	
+52	FALSE	FALSE	
+53	FALSE	FALSE	
+54	FALSE	FALSE	
+55	FALSE	FALSE	
+56	FALSE	FALSE	
+57	FALSE	FALSE	
+58	FALSE	FALSE	
+59	FALSE	FALSE	
+60	FALSE	FALSE	
+61	FALSE	FALSE	
+62	FALSE	FALSE	
+63	FALSE	FALSE	
+64	FALSE	FALSE	
+65	FALSE	FALSE	
+66	FALSE	FALSE	
+67	FALSE	FALSE	
+68	FALSE	FALSE	
+69	FALSE	FALSE	
+70	FALSE	FALSE	
+71	FALSE	FALSE	
+72	FALSE	FALSE	
+73	FALSE	FALSE	
+74	FALSE	FALSE	
+75	FALSE	FALSE	
+76	FALSE	FALSE	
+77	FALSE	FALSE	
+78	FALSE	FALSE	
+79	FALSE	FALSE	
+80	FALSE	FALSE	
+81	FALSE	FALSE	
+82	FALSE	FALSE	
+83	FALSE	FALSE	
+84	FALSE	FALSE	
+85	FALSE	FALSE	
+86	FALSE	FALSE	
+87	FALSE	FALSE	
+88	FALSE	FALSE	
+89	FALSE	FALSE	
+90	FALSE	FALSE	
+91	FALSE	FALSE	
+92	FALSE	FALSE	
+93	FALSE	FALSE	
+94	FALSE	FALSE	
+95	FALSE	FALSE	
+96	FALSE	FALSE	
+97	FALSE	FALSE	
+98	FALSE	FALSE	
+99	FALSE	FALSE	
+100	FALSE	FALSE	
+101	FALSE	FALSE	
+102	FALSE	FALSE	
+103	FALSE	FALSE	
+104	FALSE	FALSE	
+105	FALSE	FALSE	
+106	FALSE	FALSE	
+107	FALSE	FALSE	
+108	FALSE	FALSE	
+109	FALSE	FALSE	
+110	FALSE	FALSE	
+111	FALSE	FALSE	
+112	FALSE	FALSE	
+113	FALSE	FALSE	
+114	FALSE	FALSE	
+115	FALSE	FALSE	
+116	FALSE	FALSE	
+117	FALSE	FALSE	
+118	FALSE	FALSE	
+119	FALSE	FALSE	
+120	FALSE	FALSE	
+121	FALSE	FALSE	
+122	FALSE	FALSE	
+123	FALSE	FALSE	
+124	FALSE	FALSE	
+125	FALSE	FALSE	
+126	FALSE	FALSE	
+127	FALSE	FALSE	
+128	FALSE	FALSE	
+129	FALSE	FALSE	
+130	FALSE	FALSE	
+131	FALSE	FALSE	
+132	FALSE	FALSE	
+133	FALSE	FALSE	
+134	FALSE	FALSE	
+135	FALSE	FALSE	
+136	FALSE	FALSE	
+137	FALSE	FALSE	
+138	FALSE	FALSE	
+139	FALSE	FALSE	
+140	FALSE	FALSE	
+141	FALSE	FALSE	
+142	FALSE	FALSE	
+143	FALSE	FALSE	
+144	FALSE	FALSE	
+145	FALSE	FALSE	
+146	FALSE	FALSE	
+147	FALSE	FALSE	
+148	FALSE	FALSE	
+149	FALSE	FALSE	
+150	FALSE	FALSE	
+151	FALSE	FALSE	
+152	FALSE	FALSE	
+153	FALSE	FALSE	
+154	FALSE	FALSE	
+155	FALSE	FALSE	
+156	FALSE	FALSE	
+157	FALSE	FALSE	
+158	FALSE	FALSE	
+159	FALSE	FALSE	
+160	FALSE	FALSE	
+161	FALSE	FALSE	
+162	FALSE	FALSE	
+163	FALSE	FALSE	
+164	FALSE	FALSE	
+165	FALSE	FALSE	
+166	FALSE	FALSE	
+167	FALSE	FALSE	
+168	FALSE	FALSE	
+169	FALSE	FALSE	
+170	FALSE	FALSE	
+171	FALSE	FALSE	
+172	FALSE	FALSE	
+173	FALSE	FALSE	
+174	FALSE	FALSE	
+175	FALSE	FALSE	
+176	FALSE	FALSE	
+177	FALSE	FALSE	
+178	FALSE	FALSE	
+179	FALSE	FALSE	
+180	FALSE	FALSE	
+181	FALSE	FALSE	
+182	FALSE	FALSE	
+183	FALSE	FALSE	
+184	FALSE	FALSE	
+185	FALSE	FALSE	
+186	FALSE	FALSE	
+187	FALSE	FALSE	
+188	FALSE	FALSE	
+189	FALSE	FALSE	
+190	FALSE	FALSE	
+191	FALSE	FALSE	
+192	FALSE	FALSE	
+193	FALSE	FALSE	
+194	FALSE	FALSE	
+195	FALSE	FALSE	
+196	FALSE	FALSE	
+197	FALSE	FALSE	
+198	FALSE	FALSE	
+199	FALSE	FALSE	
+200	FALSE	FALSE	
+201	FALSE	FALSE	
+202	FALSE	FALSE	
+203	FALSE	FALSE	
+204	FALSE	FALSE	
+205	FALSE	FALSE	
+206	FALSE	FALSE	
+207	FALSE	FALSE	
+208	FALSE	FALSE	
+209	FALSE	FALSE	
+210	FALSE	FALSE	
+211	FALSE	FALSE	
+212	FALSE	FALSE	
+213	FALSE	FALSE	
+214	FALSE	FALSE	
+215	FALSE	FALSE	
+216	FALSE	FALSE	
+217	FALSE	FALSE	
+218	FALSE	FALSE	
+219	FALSE	FALSE	
+220	FALSE	FALSE	
+221	FALSE	FALSE	
+222	FALSE	FALSE	
+223	FALSE	FALSE	
+224	FALSE	FALSE	
+225	FALSE	FALSE	
+226	FALSE	FALSE	
+227	FALSE	FALSE	
+228	FALSE	FALSE	
+229	FALSE	FALSE	
+230	FALSE	FALSE	
+231	FALSE	FALSE	
+232	FALSE	FALSE	
+233	FALSE	FALSE	
+234	FALSE	FALSE	
+235	FALSE	FALSE	
+236	FALSE	FALSE	
+237	FALSE	FALSE	
+238	FALSE	FALSE	
+239	FALSE	FALSE	
+240	FALSE	FALSE	
+241	FALSE	FALSE	
+242	FALSE	FALSE	
+243	FALSE	FALSE	
+244	FALSE	FALSE	
+245	FALSE	FALSE	
+246	FALSE	FALSE	
+247	FALSE	FALSE	
+248	FALSE	FALSE	
+249	FALSE	FALSE	
+250	FALSE	FALSE	
+251	FALSE	FALSE	
+252	FALSE	FALSE	
+253	FALSE	FALSE	
+254	FALSE	FALSE	
+255	FALSE	FALSE	
+256	FALSE	FALSE	
+257	FALSE	FALSE	
+258	FALSE	FALSE	
+259	FALSE	FALSE	
+260	FALSE	FALSE	
+261	FALSE	FALSE	
+262	FALSE	FALSE	
+263	FALSE	FALSE	
+264	FALSE	FALSE	
+265	FALSE	FALSE	
+266	FALSE	FALSE	
+267	FALSE	FALSE	
+268	FALSE	FALSE	
+269	FALSE	FALSE	
+270	FALSE	FALSE	
+271	FALSE	FALSE	
+272	FALSE	FALSE	
+273	FALSE	FALSE	
+274	FALSE	FALSE	
+275	FALSE	FALSE	
+276	FALSE	FALSE	
+277	FALSE	FALSE	
+278	FALSE	FALSE	
+279	FALSE	FALSE	
+280	FALSE	FALSE	
+281	FALSE	FALSE	
+282	FALSE	FALSE	
+283	FALSE	FALSE	
+284	FALSE	FALSE	
+285	FALSE	FALSE	
+286	FALSE	FALSE	
+287	FALSE	FALSE	
+288	FALSE	FALSE	
+289	FALSE	FALSE	
+290	FALSE	FALSE	
+291	FALSE	FALSE	
+292	FALSE	FALSE	
+293	FALSE	FALSE	
+294	FALSE	FALSE	
+295	FALSE	FALSE	
+296	FALSE	FALSE	
+297	FALSE	FALSE	
+298	FALSE	FALSE	
+299	FALSE	FALSE	
+300	FALSE	FALSE	
+301	FALSE	FALSE	
+302	FALSE	FALSE	
+303	FALSE	FALSE	
+304	FALSE	FALSE	
+305	FALSE	FALSE	
+306	FALSE	FALSE	
+307	FALSE	FALSE	
+308	FALSE	FALSE	
+309	FALSE	FALSE	
+310	FALSE	FALSE	
+311	FALSE	FALSE	
+312	FALSE	FALSE	
+313	FALSE	FALSE	
+314	FALSE	FALSE	
+315	FALSE	FALSE	
+316	FALSE	FALSE	
+317	FALSE	FALSE	
+318	FALSE	FALSE	
+319	FALSE	FALSE	
+320	FALSE	FALSE	
+321	FALSE	FALSE	
+322	FALSE	FALSE	
+323	FALSE	FALSE	
+324	FALSE	FALSE	
+325	FALSE	FALSE	
+326	FALSE	FALSE	
+327	FALSE	FALSE	
+328	FALSE	FALSE	
+329	FALSE	FALSE	
+330	FALSE	FALSE	
+331	FALSE	FALSE	
+332	FALSE	FALSE	
+333	FALSE	FALSE	
+334	FALSE	FALSE	
+335	FALSE	FALSE	
+336	FALSE	FALSE	
+337	FALSE	FALSE	
+338	FALSE	FALSE	
+339	FALSE	FALSE	
+340	FALSE	FALSE	
+341	FALSE	FALSE	
+342	FALSE	FALSE	
+343	FALSE	FALSE	
+344	FALSE	FALSE	
+345	FALSE	FALSE	
+346	FALSE	FALSE	
+347	FALSE	FALSE	
+348	FALSE	FALSE	
+349	FALSE	FALSE	
+350	FALSE	FALSE	
+351	FALSE	FALSE	
+352	FALSE	FALSE	
+353	FALSE	FALSE	
+354	FALSE	FALSE	
+355	FALSE	FALSE	
+356	FALSE	FALSE	
+357	FALSE	FALSE	
+358	FALSE	FALSE	
+359	FALSE	FALSE	
+360	FALSE	FALSE	
+361	FALSE	FALSE	
+362	FALSE	FALSE	
+363	FALSE	FALSE	
+364	FALSE	FALSE	
+365	FALSE	FALSE	
+366	FALSE	FALSE	
+367	FALSE	FALSE	
+368	FALSE	FALSE	
+369	FALSE	FALSE	
+370	FALSE	FALSE	
+371	FALSE	FALSE	
+372	TRUE	FALSE	SER:NtermProteinFull
+373	TRUE	FALSE	THR:O-conjugated
+374	TRUE	FALSE	PRO:CtermProteinFull
+375	TRUE	FALSE	->3)-alpha-D-Galp:2-AcNH
+376	TRUE	FALSE	->4)-beta-D-Galp:non-reducing_end
+
+None
+score_list =  [-540.2969946195767]
+distance_list =  [5.162358008352742]
+core1_rmsd_list =  [2.176711796711151]
+peptide_rmsd_list =  [91.47880996588918]
+-----
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -2361.685   -2361.685
+ fa_rep                       0.550     501.471     275.809
+ fa_sol                       1.000    1435.601    1435.601
+ fa_intra_rep                 0.005     968.430       4.842
+ fa_intra_sol_xover4          1.000      84.838      84.838
+ lk_ball_wtd                  1.000     -68.366     -68.366
+ fa_elec                      1.000    -669.694    -669.694
+ hbond_sr_bb                  1.000    -140.001    -140.001
+ hbond_lr_bb                  1.000     -63.569     -63.569
+ hbond_bb_sc                  1.000     -86.662     -86.662
+ hbond_sc                     1.000     -67.790     -67.790
+ dslf_fa13                    1.250      -3.581      -4.476
+ atom_pair_constraint         1.000      39.237      39.237
+ omega                        0.400      83.818      33.527
+ fa_dun                       0.700     655.872     459.111
+ p_aa_pp                      0.600    -121.202     -72.721
+ yhh_planarity                0.625       0.444       0.278
+ ref                          1.000     117.190     117.190
+ rama_prepro                  0.450     -74.163     -33.373
+ cart_bonded                  0.500    1155.215     577.608
+---------------------------------------------------
+ Total weighted score:                     -540.297
+core.scoring.ScoreFunction: {0} 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -2361.685   -2361.685
+ fa_rep                       0.550     501.471     275.809
+ fa_sol                       1.000    1435.601    1435.601
+ fa_intra_rep                 0.005     968.430       4.842
+ fa_intra_sol_xover4          1.000      84.838      84.838
+ lk_ball_wtd                  1.000     -68.366     -68.366
+ fa_elec                      1.000    -669.694    -669.694
+ hbond_sr_bb                  1.000    -140.001    -140.001
+ hbond_lr_bb                  1.000     -63.569     -63.569
+ hbond_bb_sc                  1.000     -86.662     -86.662
+ hbond_sc                     1.000     -67.790     -67.790
+ dslf_fa13                    1.250      -3.581      -4.476
+ atom_pair_constraint         1.000      39.237      39.237
+ omega                        0.400      83.818      33.527
+ fa_dun                       0.700     655.872     459.111
+ p_aa_pp                      0.600    -121.202     -72.721
+ yhh_planarity                0.625       0.444       0.278
+ ref                          1.000     117.190     117.190
+ rama_prepro                  0.450     -74.163     -33.373
+ cart_bonded                  0.500    1155.215     577.608
+---------------------------------------------------
+ Total weighted score:                     -540.297

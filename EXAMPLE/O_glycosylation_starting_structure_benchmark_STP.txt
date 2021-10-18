@@ -1,0 +1,4 @@
+score_list = [-203.52300749329538]
+distance_list = [7.346386299118266]
+core1_rmsd_list = [3.220487411455858]
+peptide_rmsd_list = [87.56635397810143]
